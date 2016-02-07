@@ -13,12 +13,8 @@
     <script src="lib/jquery-ui.js"></script>
     <script src="lib/webL10n.js"></script>
     <script src="lib/tone.min.js"></script>
-    <script src="lib/vexflow/releases/vexflow-min.js"></script>
 
     <script type="text/javascript"></script>
-
-    <script src="//code.jquery.com/jquery-2.1.4.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
     <link rel="prefetch" type="application/l10n" href="./localization.ini" />
     <script data-main="js/loader" src="lib/require.js">
@@ -41,21 +37,6 @@
             });
         };
 
-        <!--
-        try {
-            (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) {
-                    return;
-                }
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "//connect.facebook.net/en_US/sdk.js";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-        } catch (e) {}
-          -->
-	
         $(function() {
             $("#matrix").draggable();
             $("#solfamenu").draggable();
