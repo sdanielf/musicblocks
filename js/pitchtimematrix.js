@@ -167,33 +167,33 @@ function Matrix() {
         var that = this;
         var iconSize = Math.floor(this._cellScale * 24);
 
-        var cell = this._addButton(row, 1, 'play-button.svg', iconSize, _('play'));
+        var cell = this._addButton(row, 1, 'play-button.svg', iconSize, _('tocar'));
         cell.onclick=function() {
             that._logo.setTurtleDelay(0);
             that._playAll();
         }
 
-        var cell = this._addButton(row, 2, 'export-chunk.svg', iconSize, _('save'));
+        var cell = this._addButton(row, 2, 'export-chunk.svg', iconSize, _('guardar'));
         cell.onclick=function() {
             that._save();
         }
 
-        var cell = this._addButton(row, 3, 'erase-button.svg', iconSize, _('clear'));
+        var cell = this._addButton(row, 3, 'erase-button.svg', iconSize, _('limpiar'));
         cell.onclick=function() {
             that._clear();
         }
 
-        var cell = this._addButton(row, 4, 'export-button.svg', iconSize, _('export'));
+        var cell = this._addButton(row, 4, 'export-button.svg', iconSize, _('exportar'));
         cell.onclick=function() {
             that._export();
         }
 
-        var cell = this._addButton(row, 5, 'sort.svg', iconSize, _('sort'));
+        var cell = this._addButton(row, 5, 'sort.svg', iconSize, _('ordenar'));
         cell.onclick=function() {
             that._sort();
         }
 
-        var cell = this._addButton(row, 6, 'close-button.svg', iconSize, _('close'));
+        var cell = this._addButton(row, 6, 'close-button.svg', iconSize, _('cerrar'));
         cell.onclick=function() {
             docById('pitchtimematrix').style.visibility = 'hidden';
             docById('pitchtimematrix').style.border = 0;
@@ -263,7 +263,7 @@ function Matrix() {
         row.style.top = Math.floor(MATRIXBUTTONHEIGHT * this._cellScale + i * MATRIXSOLFEHEIGHT * this._cellScale) + 'px';
         var cell = row.insertCell(0);
         cell.style.fontSize = this._cellScale * 75 + '%';
-        cell.innerHTML = _('note value');
+        cell.innerHTML = _('valor de la nota');
         cell.style.position = 'fixed';
         cell.style.height = Math.floor(1.5 * MATRIXSOLFEHEIGHT * this._cellScale) + 'px';
         cell.style.width = Math.floor(MATRIXSOLFEWIDTH * this._cellScale) + 'px';
@@ -558,7 +558,7 @@ function Matrix() {
             cell.style.height = Math.floor(MATRIXSOLFEHEIGHT * this._cellScale) + 'px';
             cell.style.left = Math.floor(matrixDivPosition.left + 2) + 'px';
             // cell.style.top = matrixDivPosition.top + (table.rows.length - 1) * cell.style.height + 'px';
-            cell.innerHTML = _('tuplet value');
+            cell.innerHTML = _('valor del tuplet');
             cell.style.backgroundColor = MATRIXLABELCOLOR;
         }
 
@@ -611,7 +611,7 @@ function Matrix() {
             cell.style.left = matrixDivPosition.left + 2 + 'px';
             // cell.style.top = matrixDivPosition.top + (table.rows.length - 2) * cell.style.height + 'px';
             cell.style.fontSize = this._cellScale * 75 + '%';
-            cell.innerHTML = _('note value');
+            cell.innerHTML = _('valor de la nota');
             cell.style.backgroundColor = MATRIXLABELCOLOR;
         }
 

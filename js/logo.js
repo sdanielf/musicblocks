@@ -385,9 +385,9 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
             case 'greater':
             case 'equal':
                 if (this.blocks.blockList[blk].value) {
-                    value = _('true');
+                    value = _('verdadero');
                 } else {
-                    value = _('false');
+                    value = _('falso');
                 }
                 break;
             case 'random':
@@ -627,7 +627,7 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
             this.duplicateFactor[turtle] = 1;
             this.skipFactor[turtle] = 1;
             this.skipIndex[turtle] = 0;
-            this.keySignature[turtle] = 'C ' + _('Major');
+            this.keySignature[turtle] = 'C ' + _('Mayor');
             this.pushedNote[turtle] = false;
             this.polyVolume[turtle] = [DEFAULTVOLUME];
             this.oscList[turtle] = [];
@@ -788,7 +788,7 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
         } else {
             // console.log('nothing to run');
             if (this.lilypondSaveOnly) {
-                this.errorMsg(NOACTIONERRORMSG, null, _('start'));
+                this.errorMsg(NOACTIONERRORMSG, null, _('iniciar'));
                 this.lilypondSaveOnly = false;
                 this.checkingLilypond = false;
                 // Reset cursor.
@@ -934,7 +934,7 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
                 eval(this.evalSetterDict[this.blocks.blockList[blk].name]);
                 break;
             }
-            this.errorMsg(_('Block does not support incrementing.'), blk);
+            this.errorMsg(_('Bloque no soporta incremento.'), blk);
         }
     };
 
@@ -1652,7 +1652,7 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
                     if (args[1]) {
                         logo.turtles.turtleList[turtle].doShowText(args[0], args[1][1]);
                     } else {
-                        logo.errorMsg(_('You must select a file.'));
+                        logo.errorMsg(_('Debe seleccionar un archivo.'));
                     }
                 } else {
                     logo.turtles.turtleList[turtle].doShowText(args[0], args[1]);
@@ -2017,7 +2017,7 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
             var c = block.connections[1];
             if (c != null && blocks.blockList[c].name === 'loadFile') {
                 if (args.length !== 1) {
-                    logo.errorMsg(_('You must select a file.'));
+                    logo.errorMsg(_('Debe seleccionar un archivo.'));
                 } else {
                     try {
                         logo.turtleHeaps[turtle] = JSON.parse(blocks.blockList[c].value[1]);
@@ -2026,11 +2026,11 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
                         }
                     } catch (e) {
                         logo.turtleHeaps[turtle] = oldHeap;
-                        logo.errorMsg(_('The file you selected does not contain a valid heap.'));
+                        logo.errorMsg(_('El archivo seleccionado no contiene un pila válida.'));
                     }
                 }
             } else {
-                logo.errorMsg(_('The loadHeap block needs a loadFile block.'))
+                logo.errorMsg(_('El bloque del pila de carga necesita un bloque de archivo de carga.'))
             }
             break;
         case 'loadHeapFromApp':
@@ -2046,12 +2046,12 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
                     var data = JSON.parse(xmlHttp.responseText);
                 } catch (e) {
                     console.log(e);
-                    logo.errorMsg(_('Error parsing JSON data:') + e);
+                    logo.errorMsg(_('Error de análisis de datos JSON.') + e);
                 }
             }
             else if (xmlHttp.readyState === 4 && xmlHttp.status !== 200) {
                 console.log('fetched the wrong page or network error...');
-                logo.errorMsg(_('404: Page not found'));
+                logo.errorMsg(_('404: Página no encontrada.'));
                 break;
             }
             else {
@@ -2075,7 +2075,7 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
                 xmlHttp.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
                 xmlHttp.send(data);
             } else {
-                logo.errorMsg(_('turtleHeaps does not contain a valid heap for') + ' ' + name);
+                logo.errorMsg(_('Pilas tortuga no contiene un montón válida para') + ' ' + name);
             }
             break;
         case 'setHeapEntry':
@@ -2085,7 +2085,7 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
                 }
                 var idx = Math.floor(args[0]);
                 if (idx < 1) {
-                    logo.errorMsg(_('Index must be > 0.'))
+                    logo.errorMsg(_('El índice debe ser > 0.'))
                 }
                 // If index > heap length, grow the heap.
                 while (logo.turtleHeaps[turtle].length < idx) {
@@ -2104,10 +2104,10 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
         case 'setmasterbpm':
             if (args.length === 1 && typeof(args[0] === 'number')) {
                 if (args[0] < 30) {
-                    logo.errorMsg(_('Beats per minute must be > 30.'))
+                    logo.errorMsg(_('Latidos por minuto debe ser> 30.'))
                     logo._masterBPM = 30;
                 } else if (args[0] > 1000) {
-                    logo.errorMsg(_('Maximum beats per minute is 1000.'))
+                    logo.errorMsg(_('Los latidos por minuto como máximo es de 1000.'))
                     logo._masterBPM = 1000;
                 } else {
                     logo._masterBPM = args[0];
@@ -2123,10 +2123,10 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
         case 'setbpm':
             if (args.length === 2 && typeof(args[0] === 'number')) {
                 if (args[0] < 30) {
-                    logo.errorMsg(_('Beats per minute must be > 30.'))
+                    logo.errorMsg(_('Latidos por minuto debe ser> 30.'))
                     var bpm = 30;
                 } else if (args[0] > 1000) {
-                    logo.errorMsg(_('Maximum beats per minute is 1000.'))
+                    logo.errorMsg(_('Los latidos por minuto como máximo es de 1000.'))
                     var bpm = 1000;
                 } else {
                     var bpm = args[0];
@@ -2250,7 +2250,7 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
 
             var __listener = function (event) {
                 if (pitchdrummatrix.drums.length === 0 || pitchdrummatrix.rowLabels.length === 0) {
-                    logo.errorMsg(_('You must have at least one pitch block and one drum block in the matrix.'), blk);
+                    logo.errorMsg(_('Debe tener al menos un bloque de tono y un bloque de tambor en la matriz.'), blk);
                 } else {
                     // Process queued up rhythms.
                     pitchdrummatrix.init(logo);
@@ -2316,7 +2316,7 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
 
             var __listener = function (event) {
                 if (logo.tupletRhythms.length === 0 || pitchtimematrix.rowLabels.length === 0) {
-                    logo.errorMsg(_('You must have at least one pitch block and one rhythm block in the matrix.'), blk);
+                    logo.errorMsg(_('Debe tener al menos un bloque de tono y un bloque de ritmo en la matriz.'), blk);
                 } else {
                     // Process queued up rhythms.
                     pitchtimematrix.init(logo);
@@ -2399,7 +2399,7 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
         case 'steppitch':
             // Similar to pitch but calculated from previous note played.
             if (logo.inNoteBlock[turtle] === 0) {
-                logo.errorMsg(_('The Step Pitch Block must be used inside of a Note Block.'), blk);
+                logo.errorMsg(_('El paso de tono del bloque debe ser utilizado dentro de un bloque de nota.'), blk);
                 logo.stopTurtle = true;
                 break;
             }
@@ -2565,7 +2565,7 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
             } else if (logo.inNoteBlock[turtle] > 0) {
                 logo.noteDrums[turtle].push(drumname);
             } else {
-                logo.errorMsg(_('Drum Block: Did you mean to use a Note block?'), blk);
+                logo.errorMsg(_('Bloque de tambor: Quizás quiso decir utilizar un bloque de nota?'), blk);
                 break;
             }
 
@@ -2831,7 +2831,7 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
                 }
             }
             else {
-                logo.errorMsg(_('Pitch Block: Did you mean to use a Note block?'), blk);
+                logo.errorMsg(_('Bloque de tono: Quizás quiso decir utilizar un bloque de nota?'), blk);
             }
             break;
         case 'rhythm2':
@@ -2861,7 +2861,7 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
                     }
                 }
             } else {
-                logo.errorMsg(_('Rhythm Block: Did you mean to use a Matrix block?'), blk);
+                logo.errorMsg(_('Bloque de ritmo: Quizás quiso decir utilizar un bloque de matrix?'), blk);
             }
 
             break;
@@ -2922,7 +2922,7 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
 
             // Ensure that note duration is positive.
             if (args[0] < 0) {
-                logo.errorMsg(_('Note value must be greater than 0'), blk);
+                logo.errorMsg(_('Valor de la nota debe ser mayor que 0'), blk);
                 var noteBeatValue = 0;
             } else {
                 if (logo.blocks.blockList[blk].name === 'newnote') {
@@ -3150,7 +3150,7 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
 
                 logo._setListener(turtle, listenerName, __listener);
             } else {
-                logo.errorMsg(_('Input to Perfect Block must be 1, 4, 5, or 8'), blk);
+                logo.errorMsg(_('Entrada al bloque de perfecto debe ser de 1, 4, 5 o 8'), blk);
                 childFlow = args[1];
                 childFlowCount = 1;
             }
@@ -3171,7 +3171,7 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
 
                 logo._setListener(turtle, listenerName, __listener);
             } else {
-                logo.errorMsg(_('Input to Diminished Block must be 1, 2, 3, 4, 5, 6, 7, or 8'), blk);
+                logo.errorMsg(_('De entrada al bloque de disminuido debe ser 1, 2, 3, 4, 5, 6, 7, o 8'), blk);
                 childFlow = args[1];
                 childFlowCount = 1;
             }
@@ -3192,7 +3192,7 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
 
                 logo._setListener(turtle, listenerName, __listener);
             } else {
-                logo.errorMsg(_('Input to Augmented Block must be 1, 2, 3, 4, 5, 6, 7, or 8'), blk);
+                logo.errorMsg(_('De entrada al bloque de aumentado debe ser 1, 2, 3, 4, 5, 6, 7, o 8'), blk);
                 childFlow = args[1];
                 childFlowCount = 1;
             }
@@ -3213,7 +3213,7 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
 
                 logo._setListener(turtle, listenerName, __listener);
             } else {
-                logo.errorMsg(_('Input to Major Block must be 2, 3, 6, or 7'), blk);
+                logo.errorMsg(_('De entrada al bloque de mayor debe ser de 2, 3, 6 ó 7'), blk);
                 childFlow = args[1];
                 childFlowCount = 1;
             }
@@ -3234,7 +3234,7 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
 
                 logo._setListener(turtle, listenerName, __listener);
             } else {
-                logo.errorMsg(_('Input to Minor Block must be 2, 3, 6, or 7'), blk);
+                logo.errorMsg(_('De entrada al bloque de minor debe ser de 2, 3, 6 ó 7'), blk);
                 childFlow = args[1];
                 childFlowCount = 1;
             }
@@ -3700,7 +3700,7 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
                 console.log('pushing ' + args[0]);
                 pitchslider.Sliders.push([args[0], 0, 0]);
             } else {
-                logo.errorMsg(_('Hertz Block: Did you mean to use a Note block?'), blk);
+                logo.errorMsg(_('Bloque de Hertz: Quizás quiso decir utilizar un bloque de nota?'), blk);
             }
             break;
             // deprecated
@@ -3760,7 +3760,7 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
                 logo.tuplet = true;
                 logo.addingNotesToTuplet = false;
             } else {
-                logo.errorMsg(_('Tuplet Block: Did you mean to use a Matrix block?'), blk);
+                logo.errorMsg(_('Bloque de tuplet: Quizás quiso decir utilizar un bloque de matrix?'), blk);
             }
             childFlow = args[2];
             childFlowCount = 1;
@@ -3948,7 +3948,7 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
             __checkLilypond = function() {
                 if (!logo.turtles.running() && queueStart === 0 && logo.lilypondSaveOnly) {
                     console.log('saving lilypond output: ' + this.lilypondStaging);
-                    saveLilypondOutput(logo, _('My Project') + '.ly');
+                    saveLilypondOutput(logo, _('Mi proyecto') + '.ly');
                     logo.lilypondSaveOnly = false;
                     logo.checkingLilypond = false;
                     // Reset cursor.
@@ -4334,7 +4334,7 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
                             if (!logo.lilypondSaveOnly && duration > 0) {
                                 if (logo.oscList[turtle].length > 0) {
                                     if (notes.length > 1) {
-                                        logo.errorMsg(last(logo.oscList[turtle]) + ': ' +  _('synth cannot play chords.'), blk);
+                                        logo.errorMsg(last(logo.oscList[turtle]) + ': ' +  _('Synth no puede tocar acordes.'), blk);
                                     }
                                     logo.synth.trigger(notes, beatValue, last(logo.oscList[turtle]));
                                 } else if (logo.drumStyle[turtle].length > 0) {
@@ -5103,7 +5103,7 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
                 if (turtle in logo.turtleHeaps && logo.turtleHeaps[turtle].length > 0) {
                     block.value = logo.turtleHeaps[turtle].pop();
                 } else {
-                    logo.errorMsg(_('empty heap'));
+                    logo.errorMsg(_('vaciar pila'));
                     block.value = null;
                 }
                 break;
@@ -5453,7 +5453,7 @@ function Logo(pitchtimematrix, pitchdrummatrix, rhythmruler, pitchstaircase, tem
             // Reverse any i18n
             // solfnotes_ is used in the interface for i18n
             //.TRANS: the note names must be separated by single spaces 
-            var solfnotes_ = _('ti la sol fa mi re do').split(' ');
+            var solfnotes_ = _('si la sol fa mi re do').split(' ');
             if (solfnotes_.indexOf(solfege.substr(0, 2).toLowerCase()) !== -1) {
                 var solfegePart = SOLFNOTES[solfnotes_.indexOf(solfege.substr(0, 2).toLowerCase())];
             } else if (solfnotes_.indexOf(solfege.substr(0, 3).toLowerCase()) !== -1) {

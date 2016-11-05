@@ -201,15 +201,15 @@ function Tempo () {
         var header = table.createTHead();
         var row = header.insertRow(-1);
 
-        var cell = this._addButton(row, -1, 'pause-button.svg', iconSize, _('pause'));
+        var cell = this._addButton(row, -1, 'pause-button.svg', iconSize, _('pausa'));
         cell.onclick=function() {
             if (that._isMoving) {
                 that._pause();
-                this.innerHTML = '&nbsp;&nbsp;<img src="header-icons/play-button.svg" title="' + _('pause') + '" alt="' + _('pause') + '" height="' + iconSize + '" width="' + iconSize + '" vertical-align="middle">&nbsp;&nbsp;';
+                this.innerHTML = '&nbsp;&nbsp;<img src="header-icons/play-button.svg" title="' + _('pausa') + '" alt="' + _('pausa') + '" height="' + iconSize + '" width="' + iconSize + '" vertical-align="middle">&nbsp;&nbsp;';
                 that._isMoving = false;
             } else {
                 that._resume();
-                this.innerHTML = '&nbsp;&nbsp;<img src="header-icons/pause-button.svg" title="' + _('play') + '" alt="' + _('play') + '" height="' + iconSize + '" width="' + iconSize + '" vertical-align="middle">&nbsp;&nbsp;';
+                this.innerHTML = '&nbsp;&nbsp;<img src="header-icons/pause-button.svg" title="' + _('tocar') + '" alt="' + _('tocar') + '" height="' + iconSize + '" width="' + iconSize + '" vertical-align="middle">&nbsp;&nbsp;';
                 that._isMoving = true;
             }
         };
@@ -222,7 +222,7 @@ function Tempo () {
             this.style.backgroundColor = MATRIXBUTTONCOLOR;
         };
 
-        var cell = this._addButton(row, 1, 'up.svg', iconSize, _('speed up'));
+        var cell = this._addButton(row, 1, 'up.svg', iconSize, _('acelerar'));
         cell.onclick=function() {
             that._speedUp();
         };
@@ -235,7 +235,7 @@ function Tempo () {
             this.style.backgroundColor = MATRIXBUTTONCOLOR;
         };
 
-        var cell = this._addButton(row, 2, 'down.svg', iconSize, _('slow down'));
+        var cell = this._addButton(row, 2, 'down.svg', iconSize, _('retardar'));
         cell.onclick=function() {
             that._slowDown();
         };
@@ -284,7 +284,7 @@ function Tempo () {
             }
         });
 
-        var cell = this._addButton(row, 4, 'close-button.svg', iconSize, _('close'));
+        var cell = this._addButton(row, 4, 'close-button.svg', iconSize, _('cerrar'));
         cell.onclick=function() {
             docById('tempoDiv').style.visibility = 'hidden';
             docById('tempoCanvas').style.visibility = 'hidden';

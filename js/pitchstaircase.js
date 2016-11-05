@@ -80,7 +80,7 @@ function PitchStairCase () {
             playrow.style.top = Math.floor(MATRIXBUTTONHEIGHT * this._cellScale) + 'px';
             playrow.setAttribute('id', 'playStair' + i);
 
-            var playcell = this._addButton(playrow, -1, 'play-button.svg', iconSize, _('play'));
+            var playcell = this._addButton(playrow, -1, 'play-button.svg', iconSize, _('tocar'));
 
             playcell.onclick=function() {
                 that._playOne(this);
@@ -377,7 +377,7 @@ function PitchStairCase () {
         row.style.top = Math.floor(playPitchDivPosition.top) + 'px';
         row.setAttribute('id', 'playAllStair');
 
-        var cell = this._addButton(row, -1, 'play-chord.svg', iconSize, _('play chord'));
+        var cell = this._addButton(row, -1, 'play-chord.svg', iconSize, _('jugar acorde'));
         cell.onclick=function() {
             that._playAll();
         }
@@ -388,7 +388,7 @@ function PitchStairCase () {
         row.style.left = Math.floor(stairDivPosition.left) + 'px';
         row.style.top = Math.floor(stairDivPosition.top) + 'px';
 
-        var cell = this._addButton(row, -1, 'export-chunk.svg', iconSize, _('save'));
+        var cell = this._addButton(row, -1, 'export-chunk.svg', iconSize, _('guardar'));
         cell.onclick=function() {
             that._save(0);
         };
@@ -401,7 +401,7 @@ function PitchStairCase () {
             this.style.backgroundColor = MATRIXBUTTONCOLOR;
         };
 
-        var cell = this._addButton(row, 1, 'play-scale.svg', iconSize, _('play scale'));
+        var cell = this._addButton(row, 1, 'play-scale.svg', iconSize, _('jugar escala'));
         cell.onclick=function() {
             that._PlayUpandDown();
         };
@@ -440,7 +440,7 @@ function PitchStairCase () {
         cell.style.backgroundColor = MATRIXBUTTONCOLOR;
         docById('musicratio2').classList.add('hasKeyboard');
 
-        var cell = this._addButton(row, 5, 'close-button.svg', iconSize, _('close'));
+        var cell = this._addButton(row, 5, 'close-button.svg', iconSize, _('cerrar'));
         cell.onclick=function() {
             docById('pitchstaircase').style.visibility = 'hidden';
             docById('playPitch').style.visibility = 'hidden';

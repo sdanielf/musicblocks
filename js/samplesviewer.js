@@ -23,10 +23,10 @@ const LOCAL_PROJECT_TEMPLATE = '\
     <img class="thumbnail" src="{img}" /> \
     <div class="options"> \
         <input type="text" value="{title}"/><br/> \
-        <img class="open icon" title="' + _('Open') + '" alt="' + _('Open') + '" src="header-icons/edit.svg" /> \
-        <img class="delete icon" title="' + _('Delete') + '" alt="' + _('Delete') + '" src="header-icons/delete.svg" /> \
-        <img class="publish icon" title="' + _('Publish') + '" alt="' + _('Publish') + '" src="header-icons/publish.svg" /> \
-        <img class="download icon" title="' + _('Download') + '" alt="' + _('Download') + '" src="header-icons/download.svg" /> \
+        <img class="open icon" title="' + _('Abrir') + '" alt="' + _('Abrir') + '" src="header-icons/edit.svg" /> \
+        <img class="delete icon" title="' + _('Borrar') + '" alt="' + _('Borrar') + '" src="header-icons/delete.svg" /> \
+        <img class="publish icon" title="' + _('Publicar') + '" alt="' + _('Publicar') + '" src="header-icons/publish.svg" /> \
+        <img class="download icon" title="' + _('Descargar') + '" alt="' + _('Descargar') + '" src="header-icons/download.svg" /> \
     </div> \
 </li>'
 
@@ -35,7 +35,7 @@ const GLOBAL_PROJECT_TEMPLATE = '\
     <img class="thumbnail" src="{img}" /> \
     <div class="options"> \
         <span>{title}</span><br/> \
-        <img class="download icon" title="' + _('Download') + '" alt="' + _('Download') + '" src="header-icons/download.svg" /> \
+        <img class="download icon" title="' + _('Descargar') + '" alt="' + _('Descargar') + '" src="header-icons/download.svg" /> \
     </div> \
 </li>';
 
@@ -424,9 +424,9 @@ function SamplesViewer(canvas, stage, refreshCanvas, load, loadRawProject, trash
     var samples = this;  // for future reference
 
     // i18n for section titles
-    document.querySelector('#planetTitle').innerHTML = _('Planet');
-    document.querySelector('#planetMyDevice').innerHTML = _('On my device');
-    document.querySelector('#planetWorldwide').innerHTML = _('Worldwide');
+    document.querySelector('#planetTitle').innerHTML = _('Planeta');
+    document.querySelector('#planetMyDevice').innerHTML = _('En mi dispositivo');
+    document.querySelector('#planetWorldwide').innerHTML = _('En todo el mundo');
 
     this.model = new PlanetModel(this);
     this.view = new PlanetView(this.model, this);

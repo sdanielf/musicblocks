@@ -18,7 +18,7 @@ const DEFAULTPALETTE = 'rhythm';
 // plugins from the extras palette.
 BUILTINPALETTES = ['rhythm', 'pitch', 'tone', 'intervals', 'drum', 'flow', 'action', 'boxes', 'widgets', 'turtle', 'pen', 'number', 'boolean', 'media', 'sensors', 'heap', 'extras'];
 
-const BUILTINPALETTESFORL23N = [_('rhythm'), _('pitch'), _('tone'), _('intervals'), _('drum'), _('flow'), _('action'), _('boxes'), _('widgets'), _('turtle'), _('pen'), _('number'), _('boolean'), _('media'), _('sensors'), _('heap'), _('extras')];
+const BUILTINPALETTESFORL23N = [_('ritmo'), _('tono'), _('tono'), _('intervalos'), _('tambor'), _('flujo'), _('acción'), _('cajas'), _('aparatos'), _('tortuga'), _('pluma'), _('número'), _('booleano'), _('medios'), _('sensores'), _('pila'), _('extras')];
 
 
 function getMainToolbarButtonNames(name) {
@@ -106,41 +106,41 @@ function createDefaultStack() {
 
 function createHelpContent() {
     HELPCONTENT = [
-        [_('Welcome to Music Blocks'), _('Music Blocks is a collection of manipulative tools for exploring fundamental musical concepts in an integrative and fun way.'), 'activity/activity-icon-mouse-color.svg'],
-        [_('Meet Mr. Mouse!'), _('Mr Mouse is our Music Blocks conductor.') + ' ' + _('Mr Mouse encourages you to explore Music Blocks.') + ' ' + _('Let us start our tour!'), 'activity/activity-icon-mouse-color.svg'],
+        [_('Bienvenido a Bloques de Música'), _('Bloques de Música es una colección de herramientas de manipulación para explorar conceptos musicales fundamentales de una manera integradora y divertido.'), 'activity/activity-icon-mouse-color.svg'],
+        [_('Conoce Sr. Ratón'), _('Sr. Ratón es nuestro conductor de bloques de música.') + ' ' + _('Sr. Ratón le anima a explorar los Bloques Musicales.') + ' ' + _('Vamos a empezar nuestro recorrido.'), 'activity/activity-icon-mouse-color.svg'],
         //.TRANS: Please add commas to list: Matrix, Notes, Tone, Turtle, and more.
-        [_('Palette buttons'), _('This toolbar contains the palette buttons Matrix Notes Tone Turtle and more.') + ' ' + _('Click to show the palettes of blocks and drag blocks from the palettes onto the canvas to use them.'), 'images/icons.svg'],
-        [_('Run fast'), _('Click to run the project in fast mode.'), 'header-icons/fast-button.svg'],
-        [_('Run slow'), _('Click to run the project in slow mode.'), 'header-icons/slow-button.svg'],
-        [_('Run music slow'), _('Click to run just the music in slow mode.'), 'header-icons/slow-music-button.svg'],
-        [_('Run step by step'), _('Click to run the project step by step.'), 'header-icons/step-button.svg'],
-        [_('Run note by note'), _('Click to run the music note by note.'), 'header-icons/step-music-button.svg'],
-        [_('Stop'), _('Stop the music (and the turtles).'), 'header-icons/stop-turtle-button.svg'],
-        [_('Clean'), _('Clear the screen and return the turtles to their initial positions.'), 'header-icons/clear-button.svg'],
-        [_('Show/hide palettes'), _('Hide or show the block palettes.'), 'header-icons/palette-button.svg'],
-        [_('Show/hide blocks'), _('Hide or show the blocks and the palettes.'), 'header-icons/hide-blocks-button.svg'],
-        [_('Expand/collapse collapsable blocks'), _('Expand or collapse start and action stacks.'), 'header-icons/collapse-blocks-button.svg'],
-        [_('Home'), _('Return all blocks to the center of the screen.'), 'header-icons/go-home-button.svg'],
-        [_('Help'), _('Show these messages.'), 'header-icons/help-button.svg'],
-        [_('Expand/collapse option toolbar'), _('Click this button to expand or collapse the auxillary toolbar.'), 'header-icons/menu-button.svg'],
-        [_('Load samples from server'), _('This button opens a viewer for loading example projects.'), 'header-icons/planet-button.svg'],
-        [_('Load project from files'), _('You can also load projects from the file system.'), 'header-icons/open-button.svg'],
-        [_('Save project'), _('Save your project to a file.'), 'header-icons/save-button.svg'],
-        [_('Save sheet music'), _('Save your project to as a Lilypond file.'), 'header-icons/lilypond-button.svg'],
-        [_('Copy'), _('To copy a stack to the clipboard, do a long press on the stack.') + ' ' + _('The Paste Button will highlight.'), 'header-icons/paste-button.svg'],
-        [_('Paste'), _('The paste button is enabled when there are blocks copied onto the clipboard.'), 'header-icons/paste-disabled-button.svg'],
-        [_('Save stack'), _('The save-stack button saves a stack onto a custom palette.') + ' ' + _('It appears after a long press on a stack.'), 'header-icons/save-blocks-button.svg'],
-        [_('Cartesian'), _('Show or hide a Cartesian-coordinate grid.'), 'header-icons/Cartesian-button.svg'],
-        [_('Polar'), _('Show or hide a polar-coordinate grid.'), 'header-icons/polar-button.svg'],
-        [_('Settings'), _('Open a panel for configuring Music Blocks.'), 'header-icons/utility-button.svg'],
-        [_('Decrease block size'), _('Decrease the size of the blocks.'), 'header-icons/smaller-button.svg'],
-        [_('Increase block size'), _('Increase the size of the blocks.'), 'header-icons/bigger-button.svg'],
-        [_('Display statistics'), _('Display statistics about your Music project.'), 'header-icons/stats-button.svg'],
-        [_('Load plugin from file'), _('You can load new blocks from the file system.'), 'header-icons/plugins-button.svg'],
-        [_('Enable scrolling'), _('You can scroll the blocks on the canvas.'), 'header-icons/scroll-unlock-button.svg'],
-        [_('Delete all'), _('Remove all content on the canvas, including the blocks.'), 'header-icons/empty-trash-button.svg'],
-        [_('Undo'), _('Restore blocks from the trash.'), 'header-icons/restore-trash-button.svg'],
-        [_('Congratulations.'), _('You have finished the tour. Please enjoy Music Blocks!'), 'activity/activity-icon-mouse-color.svg']
+        [_('Botones de paleta'), _('Esta barra de herramientas contiene los botones de la paleta de Matrix, Notas, Tono, Tortuga, y más.') + ' ' + _('Haga clic para mostrar las paletas de bloques y bloques de arrastre de las gamas de colores en el lienzo para usarlos.'), 'images/icons.svg'],
+        [_('Ejecutar rápidamente'), _('Haga clic para ejecutar el proyecto en modo rápido.'), 'header-icons/fast-button.svg'],
+        [_('Ejecutar lentamente'), _('Haz click para ejecutar el proyecto en modo lento.'), 'header-icons/slow-button.svg'],
+        [_('Música ejecute lentamente'), _('Haga clic para ejecutar sólo la música en modo lento.'), 'header-icons/slow-music-button.svg'],
+        [_('Ejecutar paso a paso'), _('Haz click para ejecutar el proyecto en modo paso a paso.'), 'header-icons/step-button.svg'],
+        [_('Reproducir nota a nota'), _('Haga clic para reproducir nota a nota.'), 'header-icons/step-music-button.svg'],
+        [_('Detener'), _('Detener la música (y las tortugas).'), 'header-icons/stop-turtle-button.svg'],
+        [_('Limpiar'), _('Borrar la pantalla y volver a las tortugas a sus posiciones iniciales.'), 'header-icons/clear-button.svg'],
+        [_('Mostrar u ocultar las paletas'), _('Ocultar o mostrar las paletas de bloques.'), 'header-icons/palette-button.svg'],
+        [_('Mostrar u ocultar los bloques.'), _('Ocultar o mostrar los bloques y las paletas.'), 'header-icons/hide-blocks-button.svg'],
+        [_('Expandir o colapsar los bloques colapsables\t'), _('Expandir o colapsar los bloques colapsables, cómo por ejemplo los bloques de empezar y los de acción.'), 'header-icons/collapse-blocks-button.svg'],
+        [_('Casa'), _('Devolver todos los bloques para el centro de la pantalla.'), 'header-icons/go-home-button.svg'],
+        [_('Ayuda'), _('Mostrar estos mensajes.'), 'header-icons/help-button.svg'],
+        [_('Expandir/colapsar la barra de opciones.'), _('Haz click en este botón para expandir o colapsar la barra de herramientas auxiliar.'), 'header-icons/menu-button.svg'],
+        [_('Cargar ejemplos desde el servidor'), _('Este botón abre la pantalla de carga de proyectos de ejemplo.'), 'header-icons/planet-button.svg'],
+        [_('Cargar proyecto de archivos'), _('También puede cargar proyectos desde el sistema de archivos.'), 'header-icons/open-button.svg'],
+        [_('Guardar proyecto'), _('Guarde proyecto en archivo'), 'header-icons/save-button.svg'],
+        [_('Ahorre partituras'), _('Guarde el proyecto como un archivo de LilyPond.'), 'header-icons/lilypond-button.svg'],
+        [_('Copiar'), _('Para copiar una pila en el portapapeles, hacer un \"pulsación larga \" en la pila.') + ' ' + _('El botón de pegar destacará.'), 'header-icons/paste-button.svg'],
+        [_('Pegar'), _('El botón de pegar está activo, por lo tanto hay bloques copiados en el portapapeles.'), 'header-icons/paste-disabled-button.svg'],
+        [_('Guardar pila'), _('El bot�n de guardar-pila guarda una pila sobre una paleta personalizada.') + ' ' + _('Aparece despu�s de una pulsaci�n larga en una pila.'), 'header-icons/save-blocks-button.svg'],
+        [_('Cartesiano'), _('Mostrar u ocultar cuadrícula en coordenadas cartesianas.'), 'header-icons/Cartesian-button.svg'],
+        [_('Polar'), _('Mostrar u ocultar la rejilla de coordenadas polares.'), 'header-icons/polar-button.svg'],
+        [_('Configuración'), _('Abre el panel para configurar Bloques de Música.'), 'header-icons/utility-button.svg'],
+        [_('Disminuir el tamaño de los bloques'), _('Disminuye el tamaño de los bloques'), 'header-icons/smaller-button.svg'],
+        [_('Incrementar tamaño de bloques'), _('Incrementa el tamaño de los bloques.'), 'header-icons/bigger-button.svg'],
+        [_('Analizar'), _('Analizar los tipos de bloques usados.'), 'header-icons/stats-button.svg'],
+        [_('Cargar plugin desde archivo'), _('Tu puedes cargar nuevos bloques desde un archivo.'), 'header-icons/plugins-button.svg'],
+        [_('Activar scroll'), _('Puedes mover los bloques por el área de trabajo'), 'header-icons/scroll-unlock-button.svg'],
+        [_('Borrar todo'), _('Eliminar todo el contenido del canvas, incluyendo los bloques.'), 'header-icons/empty-trash-button.svg'],
+        [_('Deshacer'), _('Restaurar bloques de la papelera.'), 'header-icons/restore-trash-button.svg'],
+        [_('Felicitaciones.'), _('Ha terminado la gira. Por favor, disfrutar de Bloques de Música!'), 'activity/activity-icon-mouse-color.svg']
     ];
 };
 

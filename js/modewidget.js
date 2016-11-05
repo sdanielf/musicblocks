@@ -82,7 +82,7 @@ function ModeWidget() {
         labelCell.rowSpan = 2;
         labelCell.colSpan = 2;
         labelCell.style.fontSize = this._cellScale * 100 + '%';
-        labelCell.innerHTML = '<b>' + _('mode') + '</b>';
+        labelCell.innerHTML = '<b>' + _('modo') + '</b>';
         labelCell.style.width = Math.floor(MATRIXSOLFEWIDTH * this._cellScale) + 'px';
         labelCell.style.minWidth = labelCell.style.width;
         labelCell.style.maxWidth = labelCell.style.width;
@@ -94,42 +94,42 @@ function ModeWidget() {
         var iconSize = Math.floor(this._cellScale * 24);
         var that = this;
 
-        var cell = this._addButton(row, 1, 'play-button.svg', iconSize, _('play all'));
+        var cell = this._addButton(row, 1, 'play-button.svg', iconSize, _('jugar todo'));
         cell.onclick=function() {
             that._playAll();
         }
 
-        var cell = this._addButton(row, 2, 'export-chunk.svg', iconSize, _('save'));
+        var cell = this._addButton(row, 2, 'export-chunk.svg', iconSize, _('guardar'));
         cell.onclick=function() {
             that._save();
         }
 
-        var cell = this._addButton(row, 3, 'erase-button.svg', iconSize, _('clear'));
+        var cell = this._addButton(row, 3, 'erase-button.svg', iconSize, _('limpiar'));
         cell.onclick=function() {
             that._clear();
         }
 
-        var cell = this._addButton(row, 4, 'rotate-left.svg', iconSize, _('rotate counter clockwise'));
+        var cell = this._addButton(row, 4, 'rotate-left.svg', iconSize, _('girar antihorario'));
         cell.onclick=function() {
             that._rotateLeft();
         }
 
-        var cell = this._addButton(row, 5, 'rotate-right.svg', iconSize, _('rotate clockwise'));
+        var cell = this._addButton(row, 5, 'rotate-right.svg', iconSize, _('girar horario'));
         cell.onclick=function() {
             that._rotateRight();
         }
 
-        var cell = this._addButton(row, 6, 'invert.svg', iconSize, _('invert'));
+        var cell = this._addButton(row, 6, 'invert.svg', iconSize, _('invertir'));
         cell.onclick=function() {
             that._invert();
         }
 
-        var cell = this._addButton(row, 7, 'restore-button.svg', iconSize, _('undo'));
+        var cell = this._addButton(row, 7, 'restore-button.svg', iconSize, _('anular'));
         cell.onclick=function() {
             that._undo();
         }
 
-        var cell = this._addButton(row, 8, 'close-button.svg', iconSize, _('close'));
+        var cell = this._addButton(row, 8, 'close-button.svg', iconSize, _('cerrar'));
         cell.onclick=function() {
             docById('modewidget').style.visibility = 'hidden';
             docById('modewidget').style.border = 0;
@@ -753,7 +753,7 @@ function ModeWidget() {
 
         var modeName = table.rows[14].cells[0].innerHTML;
         if (modeName === '') {
-            modeName = _('custom');
+            modeName = _('personalizado');
         }
 
         // Save a stack of pitches to be used with the matrix.

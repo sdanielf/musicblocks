@@ -43,7 +43,7 @@ function ClearBox(canvas, stage, refreshCanvas, clear) {
                 box.completeShow();
             }
 
-            this._makeBoxBitmap(CONFIRMBOX.replace(/confirm/g, _('confirm')), 'box', __processBackground, null);
+            this._makeBoxBitmap(CONFIRMBOX.replace(/confirm/g, _('confirmar')), 'box', __processBackground, null);
         } else {
             this.completeShow();
         }

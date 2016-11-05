@@ -197,7 +197,7 @@ function Blocks(canvas, stage, refreshCanvas, trashcan, updateStage, getStageSca
         this.dismissButton = makeButton('cancel-button', '', 0, 0, 55, 0, this.stage);
         this.dismissButton.visible = false;
 
-        this.saveStackButton = makeButton('save-blocks-button', _('Save stack'), 0, 0, 55, 0, this.stage);
+        this.saveStackButton = makeButton('save-blocks-button', _('Guardar pila'), 0, 0, 55, 0, this.stage);
         this.saveStackButton.visible = false;
 
         this.dismissButton.on('click', function (event) {
@@ -1268,7 +1268,7 @@ function Blocks(canvas, stage, refreshCanvas, trashcan, updateStage, getStageSca
             try {
                 var label = myBlock.value[0].toString();
             } catch (e) {
-                var label = _('open file');
+                var label = _('abrir archivo');
             }
             maxLength = 10;
         } else if (myBlock.name === 'solfege') {
@@ -1657,7 +1657,7 @@ function Blocks(canvas, stage, refreshCanvas, trashcan, updateStage, getStageSca
                 me.blockList[thisBlock].container.updateCache();
             };
 
-            postProcessArg = [thisBlock, _('text')];
+            postProcessArg = [thisBlock, _('texto')];
         } else if (name === 'solfege') {
             postProcess = function (args) {
                 var thisBlock = args[0];
@@ -1813,9 +1813,9 @@ function Blocks(canvas, stage, refreshCanvas, trashcan, updateStage, getStageSca
 
             if (myBlock.name === 'action') {
                 // Make sure we don't make two actions with the same name.
-                value = this.findUniqueActionName(_('action'));
+                value = this.findUniqueActionName(_('acción'));
                //  console.log('renaming action block to ' + value);
-                if (value !== _('action')) {
+                if (value !== _('acción')) {
                     // console.log('calling newNameddoBlock with value ' + value);
                     // TODO: are there return or arg blocks?
                     this.newNameddoBlock(value, false, false);
@@ -2003,7 +2003,7 @@ function Blocks(canvas, stage, refreshCanvas, trashcan, updateStage, getStageSca
 
     this.findUniqueActionName = function (name) {
         // If we have a stack named 'action', make the protoblock visible.
-        if (name === _('action')) {
+        if (name === _('acción')) {
             this.setActionProtoVisiblity(true);
         }
 
@@ -2089,7 +2089,7 @@ function Blocks(canvas, stage, refreshCanvas, trashcan, updateStage, getStageSca
         var nameChanged = false;
         for (var blockId = 0; blockId < blockPalette.protoList.length; blockId++) {
             var block = blockPalette.protoList[blockId];
-            if (block.name === 'namedbox' && block.defaults[0] !== _('box') && block.defaults[0] === oldName) {
+            if (block.name === 'namedbox' && block.defaults[0] !== _('caja') && block.defaults[0] === oldName) {
                 // console.log('renaming ' + block.defaults[0] + ' to ' + newName);
                 block.defaults[0] = newName;
                 nameChanged = true;
@@ -2162,7 +2162,7 @@ function Blocks(canvas, stage, refreshCanvas, trashcan, updateStage, getStageSca
         var nameChanged = false;
         for (var blockId = 0; blockId < actionsPalette.protoList.length; blockId++) {
             var block = actionsPalette.protoList[blockId];
-            if (['nameddo', 'namedcalc', 'nameddoArg', 'namedcalcArg'].indexOf(block.name) !== -1 && block.defaults[0] !== _('action') && block.defaults[0] === oldName) {
+            if (['nameddo', 'namedcalc', 'nameddoArg', 'namedcalcArg'].indexOf(block.name) !== -1 && block.defaults[0] !== _('acción') && block.defaults[0] === oldName) {
                 console.log('renaming ' + block.name + ': ' + block.defaults[0] + ' to ' + newName);
                 block.defaults[0] = newName;
                 nameChanged = true;
@@ -2188,7 +2188,7 @@ function Blocks(canvas, stage, refreshCanvas, trashcan, updateStage, getStageSca
         myStoreinBlock.palette = this.palettes.dict['boxes'];
         myStoreinBlock.defaults.push(name);
         myStoreinBlock.defaults.push(NUMBERBLOCKDEFAULT);
-        myStoreinBlock.staticLabels.push(_('store in'), _('name'), _('value'));
+        myStoreinBlock.staticLabels.push(_('guardar en'), _('nombre'), _('valor'));
         myStoreinBlock.adjustWidthToLabel();
         myStoreinBlock.twoArgBlock();
         myStoreinBlock.dockTypes[1] = 'anyin';
@@ -2282,7 +2282,7 @@ function Blocks(canvas, stage, refreshCanvas, trashcan, updateStage, getStageSca
         // a named calc w/args.
         // console.log('NEW DO: ' + name + ' ' + hasReturn + ' ' + hasArgs);
 
-        if (name === _('action')) {
+        if (name === _('acción')) {
             // 'action' already has its associated palette entries.
             return;
         }
@@ -2714,7 +2714,7 @@ function Blocks(canvas, stage, refreshCanvas, trashcan, updateStage, getStageSca
             }
 
             // If we have a stack named 'action', make te protoblock visible.
-            if (name === _('action')) {
+            if (name === _('acción')) {
                 this.setActionProtoVisiblity(true);
             }
             var oldName = name;
@@ -3464,7 +3464,7 @@ function Blocks(canvas, stage, refreshCanvas, trashcan, updateStage, getStageSca
                 var myBlock = this.blockList[blk];
                 var arg = null;
                 var c = myBlock.connections[1];
-                if (c != null && this.blockList[c].value !== _('action')) {
+                if (c != null && this.blockList[c].value !== _('acción')) {
                     if (this.newNameddoBlock(this.blockList[c].value, this.actionHasReturn(blk), this.actionHasArgs(blk))) {
                         updatePalettes = true;
                     }
@@ -3541,7 +3541,7 @@ function Blocks(canvas, stage, refreshCanvas, trashcan, updateStage, getStageSca
                 }
 
                 var blockValue = myBlock.value;
-                if (blockValue === _('action')) {
+                if (blockValue === _('acción')) {
                     continue;
                 }
 

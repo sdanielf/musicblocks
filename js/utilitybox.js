@@ -33,7 +33,7 @@ function UtilityBox(canvas, stage, refreshCanvas, bigger, smaller, plugins, stat
             this.createBox(scale, x, y);
             var box = this;
 
-            this.smallerButton = makeButton('smaller-button', _('Decrease block size'), this.container.x + 55, this.container.y + 85, 55, 0, this.stage);
+            this.smallerButton = makeButton('smaller-button', _('Disminuir el tamaño de los bloques'), this.container.x + 55, this.container.y + 85, 55, 0, this.stage);
             this.smallerButton.visible = true;
             this.positionHoverText(this.smallerButton);
             this.smallerButton.on('click', function(event) {
@@ -41,7 +41,7 @@ function UtilityBox(canvas, stage, refreshCanvas, bigger, smaller, plugins, stat
                 box.hide();
             });
 
-            this.biggerButton = makeButton('bigger-button', _('Increase block size'), this.container.x + 120, this.container.y + 85, 55, 0, this.stage);
+            this.biggerButton = makeButton('bigger-button', _('Incrementar tamaño de bloques'), this.container.x + 120, this.container.y + 85, 55, 0, this.stage);
             this.biggerButton.visible = true;
             this.positionHoverText(this.biggerButton);
             this.biggerButton.on('click', function(event) {
@@ -49,7 +49,7 @@ function UtilityBox(canvas, stage, refreshCanvas, bigger, smaller, plugins, stat
                 box.hide();
             });
 
-            this.statsButton = makeButton('stats-button', _('Display statistics'), this.container.x + 185, this.container.y + 85, 55, 0, this.stage);
+            this.statsButton = makeButton('stats-button', _('Analizar'), this.container.x + 185, this.container.y + 85, 55, 0, this.stage);
             this.statsButton.visible = true;
             this.positionHoverText(this.statsButton);
             this.statsButton.on('click', function(event) {
@@ -57,7 +57,7 @@ function UtilityBox(canvas, stage, refreshCanvas, bigger, smaller, plugins, stat
                 box.hide();
             });
 
-            this.pluginsButton = makeButton('plugins-button', _('Load plugin from file'), this.container.x + 250, this.container.y + 85, 55, 0, this.stage);
+            this.pluginsButton = makeButton('plugins-button', _('Cargar plugin desde archivo'), this.container.x + 250, this.container.y + 85, 55, 0, this.stage);
             this.pluginsButton.visible = true;
             this.positionHoverText(this.pluginsButton);
             this.pluginsButton.on('click', function(event) {
@@ -65,7 +65,7 @@ function UtilityBox(canvas, stage, refreshCanvas, bigger, smaller, plugins, stat
                 box.hide();
             });
 
-            this.scrollButton = makeButton('scroll-unlock-button', _('Enable scrolling'), this.container.x + 315, this.container.y + 85, 55, 0, this.stage);
+            this.scrollButton = makeButton('scroll-unlock-button', _('Activar scroll'), this.container.x + 315, this.container.y + 85, 55, 0, this.stage);
             this.scrollButton.visible = true;
             this.positionHoverText(this.scrollButton);
             this.scrollButton.on('click', function(event) {
@@ -74,7 +74,7 @@ function UtilityBox(canvas, stage, refreshCanvas, bigger, smaller, plugins, stat
                 box.scrollStatus = !box.scrollStatus;
             });
 
-            this.scrollButton2 = makeButton('scroll-lock-button', _('Disable scrolling'), this.container.x + 315, this.container.y + 85, 55, 0, this.stage);
+            this.scrollButton2 = makeButton('scroll-lock-button', _('Desactivar scroll'), this.container.x + 315, this.container.y + 85, 55, 0, this.stage);
             this.scrollButton2.visible = false;
             this.positionHoverText(this.scrollButton2);
             this.scrollButton2.on('click', function(event) {

@@ -464,12 +464,12 @@ function RhythmRuler () {
         row.style.left = Math.floor(drumDivPosition.left) + 'px';
         row.style.top = Math.floor(drumDivPosition.top) + 'px';
 
-        var cell = this._addButton(row, -1, 'play-button.svg', iconSize, _('play all'));
+        var cell = this._addButton(row, -1, 'play-button.svg', iconSize, _('jugar todo'));
 
         cell.onclick=function() {
             if (that._playing) {
                 if (that._playingAll) {
-                    this.innerHTML = '&nbsp;&nbsp;<img src="header-icons/play-button.svg" title="' + _('play all') + '" alt="' + _('play all') + '" height="' + iconSize + '" width="' + iconSize + '" vertical-align="middle">&nbsp;&nbsp;';
+                    this.innerHTML = '&nbsp;&nbsp;<img src="header-icons/play-button.svg" title="' + _('jugar todo') + '" alt="' + _('jugar todo') + '" height="' + iconSize + '" width="' + iconSize + '" vertical-align="middle">&nbsp;&nbsp;';
                     that._playing = false;
                     that._playingAll = false;
                     that._playingOne = false;
@@ -482,7 +482,7 @@ function RhythmRuler () {
             }
             else {
                 if (!that._playingAll) {
-                    this.innerHTML = '&nbsp;&nbsp;<img src="header-icons/pause-button.svg" title="' + _('pause') + '" alt="' + _('pause') + '" height="' + iconSize + '" width="' + iconSize + '" vertical-align="middle">&nbsp;&nbsp;';
+                    this.innerHTML = '&nbsp;&nbsp;<img src="header-icons/pause-button.svg" title="' + _('pausa') + '" alt="' + _('pausa') + '" height="' + iconSize + '" width="' + iconSize + '" vertical-align="middle">&nbsp;&nbsp;';
                     that._logo.setTurtleDelay(0);
                     that._playingAll = true;
                     that._playing = true;
@@ -522,17 +522,17 @@ function RhythmRuler () {
         var header = table.createTHead();
         var row = header.insertRow(0);
 
-        var cell = this._addButton(row, -1, 'export-chunk.svg', iconSize, _('save rhythms'));
+        var cell = this._addButton(row, -1, 'export-chunk.svg', iconSize, _('guardar ritmos'));
         cell.onclick=function() {
             that._save(0);
         };
 
-        var cell = this._addButton(row, 1, 'export-drums.svg', iconSize, _('save drum machine'));
+        var cell = this._addButton(row, 1, 'export-drums.svg', iconSize, _('guardar caja de ritmos'));
         cell.onclick=function() {
             that._saveDrumMachine(0);
         };
 
-        var cell = this._addButton(row, 2, 'restore-button.svg', iconSize, _('undo'));
+        var cell = this._addButton(row, 2, 'restore-button.svg', iconSize, _('anular'));
         cell.onclick=function() {
             that._undo();
         };
@@ -550,7 +550,7 @@ function RhythmRuler () {
         // FIXME: should be contained in click event
         docById('dissectNumber').classList.add('hasKeyboard');
 
-        var cell = this._addButton(row, 4, 'close-button.svg', iconSize, _('close'));
+        var cell = this._addButton(row, 4, 'close-button.svg', iconSize, _('cerrar'));
         cell.onclick=function() {
             // Save the new dissect history
             var dissectHistory = [];
@@ -602,11 +602,11 @@ function RhythmRuler () {
         var table = docById('drum');
         for (var i = 0; i < this.Rulers.length; i++) {
             var row = table.rows[i + 1];
-            var drumcell = this._addButton(row, -1, 'play-button.svg', iconSize, _('play'));
+            var drumcell = this._addButton(row, -1, 'play-button.svg', iconSize, _('tocar'));
             drumcell.onclick=function() {
                 if (that._playing) {
                     if (this.parentNode.id[4] === that._rulerPlaying) {
-                        this.innerHTML = '&nbsp;&nbsp;<img src="header-icons/play-button.svg" title="' + _('play') + '" alt="' + _('play') + '" height="' + iconSize + '" width="' + iconSize + '" vertical-align="middle">&nbsp;&nbsp;';
+                        this.innerHTML = '&nbsp;&nbsp;<img src="header-icons/play-button.svg" title="' + _('tocar') + '" alt="' + _('tocar') + '" height="' + iconSize + '" width="' + iconSize + '" vertical-align="middle">&nbsp;&nbsp;';
                         that._playing = false;
                         that._playingOne = false;
                         that._playingAll = false;
@@ -624,7 +624,7 @@ function RhythmRuler () {
                         that._playingAll = false;
                         that._cellCounter = 0;
                         that._rulerPlaying = this.parentNode.id[4];
-                        this.innerHTML = '&nbsp;&nbsp;<img src="header-icons/pause-button.svg" title="' + _('pause') + '" alt="' + _('pause') + '" height="' + iconSize + '" width="' + iconSize + '" vertical-align="middle">&nbsp;&nbsp;';
+                        this.innerHTML = '&nbsp;&nbsp;<img src="header-icons/pause-button.svg" title="' + _('pausa') + '" alt="' + _('pausa') + '" height="' + iconSize + '" width="' + iconSize + '" vertical-align="middle">&nbsp;&nbsp;';
                         that._runningTimes[i] = 0;
                         that._playOne();
                     }

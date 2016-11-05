@@ -611,7 +611,7 @@ function Block(protoblock, blocks, overrideName) {
                     this.value = 'A';
                     break;
                 case 'rest':
-                    this.value = _('rest');
+                    this.value = _('descanso');
                     break;
                 case 'number':
                     this.value = NUMBERBLOCKDEFAULT;
@@ -699,36 +699,36 @@ function Block(protoblock, blocks, overrideName) {
                 var fontSize = 10 * myBlock.protoblock.scale;
                 switch (myBlock.name) {
                 case 'action':
-                    myBlock.collapseText = new createjs.Text(_('action'), fontSize + 'px Sans', '#000000');
+                    myBlock.collapseText = new createjs.Text(_('acción'), fontSize + 'px Sans', '#000000');
                     break;
                 case 'start':
-                    myBlock.collapseText = new createjs.Text(_('start'), fontSize + 'px Sans', '#000000');
+                    myBlock.collapseText = new createjs.Text(_('iniciar'), fontSize + 'px Sans', '#000000');
                     break;
                 case 'matrix':
-                    myBlock.collapseText = new createjs.Text(_('matrix'), fontSize + 'px Sans', '#000000');
+                    myBlock.collapseText = new createjs.Text(_('matriz'), fontSize + 'px Sans', '#000000');
                     break;
                 case 'status':
-                    myBlock.collapseText = new createjs.Text(_('status'), fontSize + 'px Sans', '#000000');
+                    myBlock.collapseText = new createjs.Text(_('estatus'), fontSize + 'px Sans', '#000000');
                     break;
                 case 'pitchdrummatrix':
-                    myBlock.collapseText = new createjs.Text(_('drum'), fontSize + 'px Sans', '#000000');
+                    myBlock.collapseText = new createjs.Text(_('tambor'), fontSize + 'px Sans', '#000000');
                     break;
                 case 'rhythmruler':
-                    myBlock.collapseText = new createjs.Text(_('ruler'), fontSize + 'px Sans', '#000000');
+                    myBlock.collapseText = new createjs.Text(_('regla'), fontSize + 'px Sans', '#000000');
                     break;
                 case 'pitchstaircase':
-                    myBlock.collapseText = new createjs.Text(_('stair'), fontSize + 'px Sans', '#000000');
+                    myBlock.collapseText = new createjs.Text(_('escalera'), fontSize + 'px Sans', '#000000');
                     break;
                 case 'tempo':
                     myBlock.collapseText = new createjs.Text(_('tempo'), fontSize + 'px Sans', '#000000');
                 case 'modewidget':
-                    myBlock.collapseText = new createjs.Text(_('mode'), fontSize + 'px Sans', '#000000');
+                    myBlock.collapseText = new createjs.Text(_('modo'), fontSize + 'px Sans', '#000000');
                     break;
                 case 'pitchslider':
-                    myBlock.collapseText = new createjs.Text(_('slider'), fontSize + 'px Sans', '#000000');
+                    myBlock.collapseText = new createjs.Text(_('deslizador'), fontSize + 'px Sans', '#000000');
                     break;
                 case 'drum':
-                    myBlock.collapseText = new createjs.Text(_('drum'), fontSize + 'px Sans', '#000000');
+                    myBlock.collapseText = new createjs.Text(_('tambor'), fontSize + 'px Sans', '#000000');
                     break;
                 }
                 myBlock.collapseText.textAlign = 'left';
@@ -1574,7 +1574,7 @@ function Block(protoblock, blocks, overrideName) {
 
             // solfnotes_ is used in the interface for i18n
             //.TRANS: the note names must be separated by single spaces 
-            var solfnotes_ = _('ti la sol fa mi re do').split(' ');
+            var solfnotes_ = _('si la sol fa mi re do').split(' ');
 
             var labelHTML = '<select name="solfege" id="solfegeLabel" style="position: absolute;  background-color: #88e20a; width: 100px;">'
             for (var i = 0; i < SOLFNOTES.length; i++) {
@@ -1921,7 +1921,7 @@ function Block(protoblock, blocks, overrideName) {
                 // Rename both do <- name and nameddo blocks.
                 this.blocks.renameDos(oldValue, newValue);
 
-                if (oldValue === _('action')) {
+                if (oldValue === _('acción')) {
                     console.log('newNameddoBlock: ' + newValue);
                     this.blocks.newNameddoBlock(newValue, this.blocks.actionHasReturn(c), this.blocks.actionHasArgs(c));
                     this.blocks.setActionProtoVisiblity(false);
@@ -1931,7 +1931,7 @@ function Block(protoblock, blocks, overrideName) {
                 var blockPalette = blocks.palettes.dict['action'];
                 for (var blk = 0; blk < blockPalette.protoList.length; blk++) {
                     var block = blockPalette.protoList[blk];
-                    if(oldValue === _('action')) {
+                    if(oldValue === _('acción')) {
                         if (block.name === 'nameddo' && block.defaults.length === 0) {
                             block.hidden = true;
                         }
@@ -1942,7 +1942,7 @@ function Block(protoblock, blocks, overrideName) {
                         }
                     }
                 }   
-                if (oldValue === _('action')) {
+                if (oldValue === _('acción')) {
                     console.log('newNameddoBlock: ' + newValue);
                     this.blocks.newNameddoBlock(newValue, this.blocks.actionHasReturn(c), this.blocks.actionHasArgs(c));
                     this.blocks.setActionProtoVisiblity(false);

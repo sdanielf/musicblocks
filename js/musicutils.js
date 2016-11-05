@@ -34,7 +34,7 @@ const NOTESFLAT2 = ['c', 'd♭', 'd', 'e♭', 'e', 'f', 'g♭', 'g', 'a♭', 'a'
 const EQUIVALENTNOTES = {'C♯': 'D♭', 'D♯': 'E♭', 'F♯': 'G♭', 'G♯': 'A♭', 'A♯': 'B♭', 'D♭': 'C♯', 'E♭': 'D♯', 'G♭': 'F♯', 'A♭': 'G♯', 'B♭': 'A♯'};
 const EXTRATRANSPOSITIONS = {'E♯': ['F', 0], 'B♯': ['C', 1], 'C♭': ['B', -1], 'F♭': ['E', 0], 'e♯': ['F', 0], 'b♯': ['C', 1], 'c♭': ['B', -1], 'f♭': ['E', 0]};
 const SOLFEGENAMES = ['do', 're', 'mi', 'fa', 'sol', 'la', 'ti'];
-const SOLFEGECONVERSIONTABLE = {'C': 'do', 'C♯': 'do' + '♯', 'D': 're', 'D♯': 're' + '♯', 'E': 'mi', 'F': 'fa', 'F♯': 'fa' + '♯', 'G': 'sol', 'G♯': 'sol' + '♯', 'A': 'la', 'A♯': 'la' + '♯', 'B': 'ti', 'D♭': 're' + '♭', 'E♭': 'mi' + '♭', 'G♭': 'sol' + '♭', 'A♭': 'la' + '♭', 'B♭': 'ti' + '♭', 'R': _('rest')};
+const SOLFEGECONVERSIONTABLE = {'C': 'do', 'C♯': 'do' + '♯', 'D': 're', 'D♯': 're' + '♯', 'E': 'mi', 'F': 'fa', 'F♯': 'fa' + '♯', 'G': 'sol', 'G♯': 'sol' + '♯', 'A': 'la', 'A♯': 'la' + '♯', 'B': 'ti', 'D♭': 're' + '♭', 'E♭': 'mi' + '♭', 'G♭': 'sol' + '♭', 'A♭': 'la' + '♭', 'B♭': 'ti' + '♭', 'R': _('descanso')};
 const PITCHES = ['C', 'D♭', 'D', 'E♭', 'E', 'F', 'G♭', 'G', 'A♭', 'A', 'B♭', 'B'];
 const PITCHES1 = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'];
 const PITCHES2 = ['C', 'C♯', 'D', 'D♯', 'E', 'F', 'F♯', 'G', 'G♯', 'A', 'A♯', 'B'];
@@ -194,15 +194,15 @@ const MAQAMTABLE = {
 
 var MODENAMES = [
     //.TRANS: twelve semi-tone scale for music
-    [_('Chromatic'), 'CHROMATIC'],
-    [_('Algerian'), 'ALGERIAN'],
+    [_('Cromático'), 'CHROMATIC'],
+    [_('Argelino'), 'ALGERIAN'],
     //.TRANS: modal scale for music
-    [_('Diminished'), 'DIMINISHED'],
-    [_('Spanish'), 'SPANISH'],
+    [_('Disminuido'), 'DIMINISHED'],
+    [_('Español'), 'SPANISH'],
     //.TRANS: modal scale for music
     [_('Octatonic'), 'OCTATONIC'],
     //.TRANS: major scales in music
-    [_('Major'), 'MAJOR'],
+    [_('Mayor'), 'MAJOR'],
     //.TRANS: modal scale for music
     [_('Ionian'), 'IONIAN'],
     //.TRANS: modal scale for music
@@ -214,116 +214,116 @@ var MODENAMES = [
     //.TRANS: modal scale for music
     [_('Mixolydian'), 'MIXOLYDIAN'],
     //.TRANS: natural minor scales in music
-    [_('Minor'), 'MINOR'],
+    [_('Menor'), 'MINOR'],
     //.TRANS: modal scale for music
     [_('Aeolian'), 'AEOLIAN'],
     //.TRANS: modal scale for music
     [_('Locrian'), 'LOCRIAN'],
     //.TRANS: minor jazz scale for music
-    [_('Jazz Minor'), 'JAZZ MINOR'],
+    [_('Jazz Menor'), 'JAZZ MINOR'],
     //.TRANS: bebop scale for music
     [_('Bebop'), 'BEBOP'],
-    [_('Arabic'), 'ARABIC'],
-    [_('Byzantine'), 'BYZANTINE'],
+    [_('Arábica'), 'ARABIC'],
+    [_('Bizantino'), 'BYZANTINE'],
     //.TRANS: musical scale for music by Verdi
-    [_('Enigmatic'), 'ENIGMATIC'],
-    [_('Ethiopian'), 'ETHIOPIAN'],
+    [_('Enigmático'), 'ENIGMATIC'],
+    [_('Etíope'), 'ETHIOPIAN'],
     //.TRANS: Ethiopic scale for music
     [_('Geez'), 'GEEZ'],
-    [_('Hindu'), 'HINDU'],
-    [_('Hungarian'), 'HUNGARIAN'],
+    [_('Hindú'), 'HINDU'],
+    [_('Húngaro'), 'HUNGARIAN'],
     //.TRANS: minor Romanian scale for music
-    [_('Romanian Minor'), 'ROMANIAN MINOR'],
-    [_('Spanish Gypsy'), 'SPANISH GYPSY'],
+    [_('Romano Menor'), 'ROMANIAN MINOR'],
+    [_('Gitana española'), 'SPANISH GYPSY'],
     //.TRANS: musical scale for Mid-Eastern music
     [_('Maqam'), 'MAQAM'],
     //.TRANS: minor blues scale for music
     [_('Blues'), 'BLUES'],
     //.TRANS: major blues scale for music
-    [_('Major Blues'), 'MAJOR BLUES'],
+    [_('Blues mayor'), 'MAJOR BLUES'],
     [_('Whole Tone'), 'WHOLE TONE'],
     //.TRANS: pentatonic scale in music
-    [_('Pentatonic'), 'PENTATONIC'],
-    [_('Chinese'), 'CHINESE'],
-    [_('Egyptian'), 'EGYPTIAN'],
+    [_('Pentatónica'), 'PENTATONIC'],
+    [_('Chino'), 'CHINESE'],
+    [_('Egipcio'), 'EGYPTIAN'],
     //.TRANS: Japanese pentatonic scale for music
     [_('Hirajoshi'), 'HIRAJOSHI'],
-    [_('Japanese'), 'JAPANESE'],
+    [_('Japonés'), 'JAPANESE'],
     //.TRANS: Italian mathematician
     [_('Fibonacci'), 'FIBONACCI'],
-    [_('Custom'), 'CUSTOM'],
+    [_('Personalizado'), 'CUSTOM'],
 ];
 
 // console.log(MODENAMES);
 
 var VOICENAMES = [
     //.TRANS: musical instrument
-    [_('violin'), 'violin', 'images/voices.svg'],
+    [_('violín'), 'violin', 'images/voices.svg'],
     //.TRANS: musical instrument
-    [_('cello'), 'cello', 'images/voices.svg'],
+    [_('violonchelo'), 'cello', 'images/voices.svg'],
     //.TRANS: musical instrument
     // [_('basse'), 'basse', 'images/voices.svg'],
     //.TRANS: polytone synthesizer
-    [_('poly'), 'poly', 'images/synth.svg'],
+    [_('polifónico'), 'poly', 'images/synth.svg'],
     //.TRANS: sine wave
     [_('sine'), 'sine', 'images/synth.svg'],
     //.TRANS: square wave
-    [_('square'), 'square', 'images/synth.svg'],
+    [_('cuadrado'), 'square', 'images/synth.svg'],
     //.TRANS: sawtooth wave
     [_('sawtooth'), 'sawtooth', 'images/synth.svg'],
     //.TRANS: triangle wave
-    [_('triangle'), 'triangle', 'images/synth.svg'],
+    [_('triángulo'), 'triangle', 'images/synth.svg'],
 ];
 
 // console.log(VOICENAMES);
 
 var DRUMNAMES = [
     //.TRANS: musical instrument
-    [_('snare drum'), 'snaredrum', 'images/drum.svg'],
+    [_('tambor militar pequeño'), 'snaredrum', 'images/drum.svg'],
     //.TRANS: musical instrument
-    [_('kick drum'), 'kick', 'images/drum.svg'],
+    [_('bombo'), 'kick', 'images/drum.svg'],
     //.TRANS: musical instrument
     [_('tom tom'), 'tom', 'images/tomtom.svg'],
     //.TRANS: musical instrument
-    [_('floor tom tom'), 'floortom', 'images/floortom.svg'],
+    [_('tom tom de piso'), 'floortom', 'images/floortom.svg'],
     //.TRANS: musical instrument
-    [_('cup drum'), 'cup', 'images/drum.svg'],
+    [_('tambor taza'), 'cup', 'images/drum.svg'],
     //.TRANS: musical instrument
-    [_('darbuka drum'), 'darbuka', 'images/darbuka.svg'],
+    [_('darbuka'), 'darbuka', 'images/darbuka.svg'],
     //.TRANS: musical instrument
     [_('hi hat'), 'hihat', 'images/hihat.svg'],
     //.TRANS: musical instrument
     [_('ride bell'), 'ridebell', 'images/ridebell.svg'],
     //.TRANS: musical instrument
-    [_('cow bell'), 'cowbell', 'images/bell.svg'],
+    [_('cencerro'), 'cowbell', 'images/bell.svg'],
     //.TRANS: musical instrument
-    [_('triangle bell'), 'trianglebell', 'images/triangle.svg'],
+    [_('campana triángulo'), 'trianglebell', 'images/triangle.svg'],
     //.TRANS: musical instrument
-    [_('finger cymbals'), 'fingercymbals', 'images/fingercymbals.svg'],
+    [_('castañuelas'), 'fingercymbals', 'images/fingercymbals.svg'],
     //.TRANS: sound effect
     [_('chine'), 'chine', 'images/bell.svg'],
     //.TRANS: sound effect
-    [_('clang'), 'clang', 'images/bell.svg'],
+    [_('estruendo'), 'clang', 'images/bell.svg'],
     //.TRANS: sound effect
-    [_('crash'), 'crash', 'images/bell.svg'],
+    [_('choque'), 'crash', 'images/bell.svg'],
     //.TRANS: sound effect
-    [_('bottle'), 'bottle', 'images/drum.svg'],
+    [_('botella'), 'bottle', 'images/drum.svg'],
     //.TRANS: sound effect
-    [_('clap'), 'clap', 'images/drum.svg'],
+    [_('palmada'), 'clap', 'images/drum.svg'],
     //.TRANS: sound effect
-    [_('slap'), 'slap', 'images/drum.svg'],
+    [_('bofetada'), 'slap', 'images/drum.svg'],
     //.TRANS: sound effect
-    [_('splash'), 'splash', 'images/drum.svg'],
+    [_('salpicadura'), 'splash', 'images/drum.svg'],
     //.TRANS: sound effect
-    [_('bubbles'), 'bubbles', 'images/drum.svg'],
+    [_('burbujas'), 'bubbles', 'images/drum.svg'],
     //.TRANS: animal sound effect
-    [_('cat'), 'cat', 'images/cat.svg'],
+    [_('gato'), 'cat', 'images/cat.svg'],
     //.TRANS: animal sound effect
-    [_('cricket'), 'cricket', 'images/cricket.svg'],
+    [_('grillo'), 'cricket', 'images/cricket.svg'],
     //.TRANS: animal sound effect
-    [_('dog'), 'dog', 'images/dog.svg'],
+    [_('perro'), 'dog', 'images/dog.svg'],
     //.TRANS: animal sound effect
-    [_('duck'), 'duck', 'images/duck.svg'],
+    [_('pato'), 'duck', 'images/duck.svg'],
 ];
 
 // console.log(DRUMNAMES);
@@ -972,7 +972,7 @@ function getSolfege(note) {
 function i18nSolfege(note) {
     // solfnotes_ is used in the interface for i18n
     //.TRANS: the note names must be separated by single spaces 
-    var solfnotes_ = _('ti la sol fa mi re do').split(' ');
+    var solfnotes_ = _('si la sol fa mi re do').split(' ');
     var i = SOLFNOTES.indexOf(note);
     if (i !== -1) {
         return solfnotes_[i];

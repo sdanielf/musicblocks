@@ -472,7 +472,7 @@ define(function (require) {
             var button = this;
             button.x = (canvas.width / (2 * turlteBlocksScale))  + (300 / Math.sqrt(2));
             button.y = 300.00 - (300.00 / Math.sqrt(2));
-            this.closeButton = _makeButton('cancel-button', _('Close'), button.x, button.y, 55, 0);
+            this.closeButton = _makeButton('cancel-button', _('Cerrar'), button.x, button.y, 55, 0);
             this.closeButton.on('click', function(event) {
                 console.log('Deleting Chart');
                 button.closeButton.visible = false;
@@ -1355,7 +1355,7 @@ define(function (require) {
                     }
 
                     var actionName = actionArg.value;
-                    if (actionName !== _('action')) {
+                    if (actionName !== _('acción')) {
                         blocks.checkPaletteEntries('action');
                     }
                 }
@@ -2071,18 +2071,18 @@ define(function (require) {
 
             // Buttons used when running turtle programs
             var buttonNames = [
-                ['fast', _doFastButton, _('Run fast')],
-                ['slow', _doSlowButton, _('Run slow')],
-                ['step', _doStepButton, _('Run step by step')],
-                ['slow-music', _doSlowMusicButton, _('Run music slow')],
-                ['step-music', _doStepMusicButton, _('Run note by note')],
-                ['stop-turtle', doStopButton, _('Stop')],
-                ['clear', _allClear, _('Clean')],
-                ['palette', _changePaletteVisibility, _('Show/hide palettes')],
-                ['hide-blocks', _changeBlockVisibility, _('Show/hide blocks')],
-                ['collapse-blocks', _toggleCollapsibleStacks, _('Expand/collapse collapsable blocks')],
-                ['go-home', _findBlocks, _('Home')],
-                ['help', _showHelp, _('Help')]
+                ['fast', _doFastButton, _('Ejecutar rápidamente')],
+                ['slow', _doSlowButton, _('Ejecutar lentamente')],
+                ['step', _doStepButton, _('Ejecutar paso a paso')],
+                ['slow-music', _doSlowMusicButton, _('Música ejecute lentamente')],
+                ['step-music', _doStepMusicButton, _('Reproducir nota a nota')],
+                ['stop-turtle', doStopButton, _('Detener')],
+                ['clear', _allClear, _('Limpiar')],
+                ['palette', _changePaletteVisibility, _('Mostrar u ocultar las paletas')],
+                ['hide-blocks', _changeBlockVisibility, _('Mostrar u ocultar los bloques.')],
+                ['collapse-blocks', _toggleCollapsibleStacks, _('Expandir o colapsar los bloques colapsables\t')],
+                ['go-home', _findBlocks, _('Casa')],
+                ['help', _showHelp, _('Ayuda')]
             ];
 
             if (sugarizerCompatibility.isInsideSugarizer()) {
@@ -2122,7 +2122,7 @@ define(function (require) {
                     homeButtonContainers.push(container);
                     homeButtonContainersX = x;
                     homeButtonContainersY = y;
-                    var container2 = _makeButton('go-home-faded-button', _('Home'), x, y, btnSize, 0);
+                    var container2 = _makeButton('go-home-faded-button', _('Casa'), x, y, btnSize, 0);
                     _loadButtonDragHandler(container2, x, y, buttonNames[i][1]);
                     homeButtonContainers.push(container2);
                     onscreenButtons.push(container2);
@@ -2149,16 +2149,16 @@ define(function (require) {
 
             // Misc. other buttons
             var menuNames = [
-                ['planet', _doOpenSamples, _('Load samples from server')],
-                ['open', doLoad, _('Load project from files')],
-                ['save', doSave, _('Save project')],
-                ['lilypond', _doLilypond, _('Save sheet music')],
-                ['paste-disabled', pasteStack, _('Paste')],
-                ['Cartesian', _doCartesian, _('Cartesian')],
+                ['planet', _doOpenSamples, _('Cargar ejemplos desde el servidor')],
+                ['open', doLoad, _('Cargar proyecto de archivos')],
+                ['save', doSave, _('Guardar proyecto')],
+                ['lilypond', _doLilypond, _('Ahorre partituras')],
+                ['paste-disabled', pasteStack, _('Pegar')],
+                ['Cartesian', _doCartesian, _('Cartesiano')],
                 ['polar', _doPolar, _('Polar')],
-                ['utility', _doUtilityBox, _('Settings')],
-                ['empty-trash', _deleteBlocksBox, _('Delete all')],
-                ['restore-trash', _restoreTrash, _('Undo')]
+                ['utility', _doUtilityBox, _('Configuración')],
+                ['empty-trash', _deleteBlocksBox, _('Borrar todo')],
+                ['restore-trash', _restoreTrash, _('Deshacer')]
             ];
 
             document.querySelector('#myOpenFile')

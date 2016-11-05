@@ -69,7 +69,7 @@ function StatusMatrix() {
         var iconSize = Math.floor(this._cellScale * 24);
 
         var cell = row.insertCell(-1);
-        cell.innerHTML = '&nbsp;&nbsp;<img src="header-icons/close-button.svg" title="' + _('close') + '" alt="' + _('close') + '" height="' + iconSize + '" width="' + iconSize + '">&nbsp;&nbsp;';
+        cell.innerHTML = '&nbsp;&nbsp;<img src="header-icons/close-button.svg" title="' + _('cerrar') + '" alt="' + _('cerrar') + '" height="' + iconSize + '" width="' + iconSize + '">&nbsp;&nbsp;';
         cell.style.width = Math.floor(MATRIXBUTTONHEIGHT * this._cellScale) + 'px';
         cell.style.minWidth = cell.style.width;
         cell.style.maxWidth = cell.style.width;
@@ -117,7 +117,7 @@ function StatusMatrix() {
 
         var cell = row.insertCell(i + 1);
         cell.style.fontSize = Math.floor(this._cellScale * 100) + '%';
-        cell.innerHTML = '&nbsp;<b>' + _('note') + '</b>&nbsp;'
+        cell.innerHTML = '&nbsp;<b>' + _('nota') + '</b>&nbsp;'
         cell.style.height = Math.floor(MATRIXBUTTONHEIGHT * this._cellScale) + 'px';
         cell.style.backgroundColor = MATRIXBUTTONCOLOR;
 

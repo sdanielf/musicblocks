@@ -71,7 +71,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var currentNoteBlock = new ProtoBlock('currentnote');
     currentNoteBlock.palette = palettes.dict['pitch'];
     blocks.protoBlockDict['currentnote'] = currentNoteBlock;
-    currentNoteBlock.staticLabels.push(_('current pitch name'));
+    currentNoteBlock.staticLabels.push(_('tono actual'));
     currentNoteBlock.hidden = true;
     currentNoteBlock.adjustWidthToLabel();
     currentNoteBlock.parameterBlock();
@@ -80,7 +80,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var currentOctaveBlock = new ProtoBlock('currentoctave');
     currentOctaveBlock.palette = palettes.dict['pitch'];
     blocks.protoBlockDict['currentoctave'] = currentOctaveBlock;
-    currentOctaveBlock.staticLabels.push(_('current pitch octave'));
+    currentOctaveBlock.staticLabels.push(_('octava actual'));
     currentOctaveBlock.hidden = true;
     currentOctaveBlock.adjustWidthToLabel();
     currentOctaveBlock.parameterBlock();
@@ -90,7 +90,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     squareBlock.palette = palettes.dict['pitch'];
     blocks.protoBlockDict['square'] = squareBlock;
     squareBlock.hidden = true;
-    squareBlock.staticLabels.push(_('square'));
+    squareBlock.staticLabels.push(_('cuadrado'));
     squareBlock.adjustWidthToLabel();
     squareBlock.oneArgBlock();
     squareBlock.defaults.push(440);
@@ -100,7 +100,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     triangleBlock.palette = palettes.dict['pitch'];
     blocks.protoBlockDict['triangle'] = triangleBlock;
     triangleBlock.hidden = true;
-    triangleBlock.staticLabels.push(_('triangle'));
+    triangleBlock.staticLabels.push(_('triángulo'));
     triangleBlock.adjustWidthToLabel();
     triangleBlock.oneArgBlock();
     triangleBlock.defaults.push(440);
@@ -129,28 +129,28 @@ function initBasicProtoBlocks(palettes, blocks) {
     var transposition = new ProtoBlock('transpositionfactor');
     transposition.palette = palettes.dict['pitch'];
     blocks.protoBlockDict['transpositionfactor'] = transposition;
-    transposition.staticLabels.push(_('transposition'));
+    transposition.staticLabels.push(_('transposición'));
     transposition.adjustWidthToLabel();
     transposition.parameterBlock();
 
     var consonantStepDownBlock = new ProtoBlock('consonantstepsizedown');
     consonantStepDownBlock.palette = palettes.dict['pitch'];
     blocks.protoBlockDict['consonantstepsizedown'] = consonantStepDownBlock;
-    consonantStepDownBlock.staticLabels.push(_('consonant step down'));
+    consonantStepDownBlock.staticLabels.push(_('consonante paso hacia abajo'));
     consonantStepDownBlock.adjustWidthToLabel();
     consonantStepDownBlock.parameterBlock();
 
     var consonantStepUpBlock = new ProtoBlock('consonantstepsizeup');
     consonantStepUpBlock.palette = palettes.dict['pitch'];
     blocks.protoBlockDict['consonantstepsizeup'] = consonantStepUpBlock;
-    consonantStepUpBlock.staticLabels.push(_('consonant step up'));
+    consonantStepUpBlock.staticLabels.push(_('consonante paso adelante'));
     consonantStepUpBlock.adjustWidthToLabel();
     consonantStepUpBlock.parameterBlock();
 
     var turtlePitchBlock = new ProtoBlock('turtlepitch');
     turtlePitchBlock.palette = palettes.dict['pitch'];
     blocks.protoBlockDict['turtlepitch'] = turtlePitchBlock;
-    turtlePitchBlock.staticLabels.push(_('turtle pitch number'));
+    turtlePitchBlock.staticLabels.push(_('número de tono de tortugas'));
     turtlePitchBlock.oneArgMathBlock();
     turtlePitchBlock.adjustWidthToLabel();
     turtlePitchBlock.dockTypes[1] = 'anyin';
@@ -158,7 +158,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var numberToPitchBlock = new ProtoBlock('number2pitch');
     numberToPitchBlock.palette = palettes.dict['pitch'];
     blocks.protoBlockDict['number2pitch'] = numberToPitchBlock;
-    numberToPitchBlock.staticLabels.push(_('number to pitch'));
+    numberToPitchBlock.staticLabels.push(_('número a tono'));
     numberToPitchBlock.oneArgMathBlock();
     numberToPitchBlock.adjustWidthToLabel();
     numberToPitchBlock.defaults.push(48);
@@ -166,7 +166,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var numberToOctaveBlock = new ProtoBlock('number2octave');
     numberToOctaveBlock.palette = palettes.dict['pitch'];
     blocks.protoBlockDict['number2octave'] = numberToOctaveBlock;
-    numberToOctaveBlock.staticLabels.push(_('number to octave'));
+    numberToOctaveBlock.staticLabels.push(_('número a octava'));
     numberToOctaveBlock.oneArgMathBlock();
     numberToOctaveBlock.adjustWidthToLabel();
     numberToOctaveBlock.defaults.push(48);
@@ -194,7 +194,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var invertBlock2 = new ProtoBlock('invert2');
     invertBlock2.palette = palettes.dict['pitch'];
     blocks.protoBlockDict['invert2'] = invertBlock2;
-    invertBlock2.staticLabels.push(_('invert (odd)'), _('note'), _('octave'));
+    invertBlock2.staticLabels.push(_('invertir (impar)'), _('nota'), _('octava'));
     invertBlock2.adjustWidthToLabel();
     invertBlock2.flowClampTwoArgBlock();
     invertBlock2.adjustWidthToLabel();
@@ -206,7 +206,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var invertBlock = new ProtoBlock('invert');
     invertBlock.palette = palettes.dict['pitch'];
     blocks.protoBlockDict['invert'] = invertBlock;
-    invertBlock.staticLabels.push(_('invert (even)'), _('note'), _('octave'));
+    invertBlock.staticLabels.push(_('invertir (par)'), _('nota'), _('octava'));
     invertBlock.adjustWidthToLabel();
     invertBlock.flowClampTwoArgBlock();
     invertBlock.adjustWidthToLabel();
@@ -218,7 +218,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var transpositionBlock = new ProtoBlock('settransposition');
     transpositionBlock.palette = palettes.dict['pitch'];
     blocks.protoBlockDict['settransposition'] = transpositionBlock;
-    transpositionBlock.staticLabels.push(_('adjust transposition'));
+    transpositionBlock.staticLabels.push(_('ajustar transposición'));
     transpositionBlock.adjustWidthToLabel();
     transpositionBlock.defaults.push('1');
     transpositionBlock.flowClampOneArgBlock();
@@ -226,21 +226,21 @@ function initBasicProtoBlocks(palettes, blocks) {
     var octaveBlock = new ProtoBlock('octave');
     octaveBlock.palette = palettes.dict['pitch'];
     blocks.protoBlockDict['octave'] = octaveBlock;
-    octaveBlock.staticLabels.push(_('octave'));
+    octaveBlock.staticLabels.push(_('octava'));
     octaveBlock.adjustWidthToLabel();
     octaveBlock.zeroArgBlock();
 
     var flatBlock = new ProtoBlock('flat');
     flatBlock.palette = palettes.dict['pitch'];
     blocks.protoBlockDict['flat'] = flatBlock;
-    flatBlock.staticLabels.push(_('flat'));
+    flatBlock.staticLabels.push(_('planas'));
     flatBlock.adjustWidthToLabel();
     flatBlock.flowClampZeroArgBlock();
 
     var sharpBlock = new ProtoBlock('sharp');
     sharpBlock.palette = palettes.dict['pitch'];
     blocks.protoBlockDict['sharp'] = sharpBlock;
-    sharpBlock.staticLabels.push(_('sharp'));
+    sharpBlock.staticLabels.push(_('agudas'));
     sharpBlock.adjustWidthToLabel();
     sharpBlock.flowClampZeroArgBlock();
     
@@ -255,7 +255,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var pitchStepBlock = new ProtoBlock('steppitch');
     pitchStepBlock.palette = palettes.dict['pitch'];
     blocks.protoBlockDict['steppitch'] = pitchStepBlock;
-    pitchStepBlock.staticLabels.push(_('step pitch'));
+    pitchStepBlock.staticLabels.push(_('paso el tono'));
     pitchStepBlock.oneArgBlock();
     pitchStepBlock.adjustWidthToLabel();
     pitchStepBlock.dockTypes[1] = 'anyin';
@@ -264,7 +264,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var pitch = new ProtoBlock('pitch');
     pitch.palette = palettes.dict['pitch'];
     blocks.protoBlockDict['pitch'] = pitch;
-    pitch.staticLabels.push(_('pitch'), _('name'), _('octave'));
+    pitch.staticLabels.push(_('tono'), _('nombre'), _('octava'));
     pitch.adjustWidthToLabel();
     pitch.defaults.push('sol');
     pitch.defaults.push(4);
@@ -277,49 +277,49 @@ function initBasicProtoBlocks(palettes, blocks) {
     var sixtyfourthNoteBlock = new ProtoBlock('sixtyfourthNote');
     sixtyfourthNoteBlock.palette = palettes.dict['widgets'];
     blocks.protoBlockDict['sixtyfourthNote'] = sixtyfourthNoteBlock;
-    sixtyfourthNoteBlock.staticLabels.push(_('1/64 note') + ' 𝅘𝅥𝅱');
+    sixtyfourthNoteBlock.staticLabels.push(_('1/64 nota') + ' 𝅘𝅥𝅱');
     sixtyfourthNoteBlock.adjustWidthToLabel();
     sixtyfourthNoteBlock.zeroArgBlock();
 
     var thirtysecondNoteBlock = new ProtoBlock('thirtysecondNote');
     thirtysecondNoteBlock.palette = palettes.dict['widgets'];
     blocks.protoBlockDict['thirtysecondNote'] = thirtysecondNoteBlock;
-    thirtysecondNoteBlock.staticLabels.push(_('1/32 note') + ' 𝅘𝅥𝅰');
+    thirtysecondNoteBlock.staticLabels.push(_('1/32 nota') + ' 𝅘𝅥𝅰');
     thirtysecondNoteBlock.adjustWidthToLabel();
     thirtysecondNoteBlock.zeroArgBlock();
 
     var sixteenthNoteBlock = new ProtoBlock('sixteenthNote');
     sixteenthNoteBlock.palette = palettes.dict['widgets'];
     blocks.protoBlockDict['sixteenthNote'] = sixteenthNoteBlock;
-    sixteenthNoteBlock.staticLabels.push(_('1/16 note') + ' 𝅘𝅥𝅯');
+    sixteenthNoteBlock.staticLabels.push(_('1/16 nota') + ' 𝅘𝅥𝅯');
     sixteenthNoteBlock.adjustWidthToLabel();
     sixteenthNoteBlock.zeroArgBlock();
 
     var eighthNoteBlock = new ProtoBlock('eighthNote');
     eighthNoteBlock.palette = palettes.dict['widgets'];
     blocks.protoBlockDict['eighthNote'] = eighthNoteBlock;
-    eighthNoteBlock.staticLabels.push(_('eighth note') + ' ♪');
+    eighthNoteBlock.staticLabels.push(_('1/8 nota') + ' ♪');
     eighthNoteBlock.adjustWidthToLabel();
     eighthNoteBlock.zeroArgBlock();
 
     var quarterNoteBlock = new ProtoBlock('quarterNote');
     quarterNoteBlock.palette = palettes.dict['widgets'];
     blocks.protoBlockDict['quarterNote'] = quarterNoteBlock;
-    quarterNoteBlock.staticLabels.push(_('quarter note') + ' ♩');
+    quarterNoteBlock.staticLabels.push(_('1/4 nota') + ' ♩');
     quarterNoteBlock.adjustWidthToLabel();
     quarterNoteBlock.zeroArgBlock();
 
     var halfNoteBlock = new ProtoBlock('halfNote');
     halfNoteBlock.palette = palettes.dict['widgets'];
     blocks.protoBlockDict['halfNote'] = halfNoteBlock;
-    halfNoteBlock.staticLabels.push(_('half note') + ' 𝅗𝅥');
+    halfNoteBlock.staticLabels.push(_('1/2 nota') + ' 𝅗𝅥');
     halfNoteBlock.adjustWidthToLabel();
     halfNoteBlock.zeroArgBlock();
 
     var wholeNoteBlock = new ProtoBlock('wholeNote');
     wholeNoteBlock.palette = palettes.dict['widgets'];
     blocks.protoBlockDict['wholeNote'] = wholeNoteBlock;
-    wholeNoteBlock.staticLabels.push(_('whole note') + ' 𝅝');
+    wholeNoteBlock.staticLabels.push(_('nota completa') + ' 𝅝');
     wholeNoteBlock.adjustWidthToLabel();
     wholeNoteBlock.zeroArgBlock();
 
@@ -327,7 +327,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     tuplet2Block.palette = palettes.dict['widgets'];
     blocks.protoBlockDict['tuplet2'] = tuplet2Block;
     // FIXME: Add extra labels to basicClamp blocks when present.
-    tuplet2Block.staticLabels.push(_('tuplet'), _('number of notes'), _('note value'));
+    tuplet2Block.staticLabels.push(_('tuplet'), _('número de notas'), _('valor de la nota'));
     tuplet2Block.extraWidth = 20;
     tuplet2Block.adjustWidthToLabel();
     tuplet2Block.flowClampTwoArgBlock();
@@ -338,7 +338,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var rhythm = new ProtoBlock('rhythm');
     rhythm.palette = palettes.dict['widgets'];
     blocks.protoBlockDict['rhythm'] = rhythm;
-    rhythm.staticLabels.push(_('rhythm'), _('number of notes'), _('note value'));
+    rhythm.staticLabels.push(_('ritmo'), _('número de notas'), _('valor de la nota'));
     rhythm.extraWidth = 10;
     rhythm.adjustWidthToLabel();
     rhythm.defaults.push(3);
@@ -351,7 +351,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var rhythm2 = new ProtoBlock('rhythm2');
     rhythm2.palette = palettes.dict['widgets'];
     blocks.protoBlockDict['rhythm2'] = rhythm2;
-    rhythm2.staticLabels.push(_('rhythm'), _('number of notes'), _('note value'));
+    rhythm2.staticLabels.push(_('ritmo'), _('número de notas'), _('valor de la nota'));
     rhythm2.extraWidth = 10;
     rhythm2.adjustWidthToLabel();
     rhythm2.defaults.push(3);
@@ -363,7 +363,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var modewidgetBlock = new ProtoBlock('modewidget');
     modewidgetBlock.palette = palettes.dict['widgets'];
     blocks.protoBlockDict['modewidget'] = modewidgetBlock;
-    modewidgetBlock.staticLabels.push(_('custom mode'));
+    modewidgetBlock.staticLabels.push(_('modo personalizado'));
     modewidgetBlock.adjustWidthToLabel();
     modewidgetBlock.stackClampZeroArgBlock();
 
@@ -377,28 +377,28 @@ function initBasicProtoBlocks(palettes, blocks) {
     var pitchDrumMatrixBlock = new ProtoBlock('pitchdrummatrix');
     pitchDrumMatrixBlock.palette = palettes.dict['widgets'];
     blocks.protoBlockDict['pitchdrummatrix'] = pitchDrumMatrixBlock;
-    pitchDrumMatrixBlock.staticLabels.push(_('pitch-drum matrix'));
+    pitchDrumMatrixBlock.staticLabels.push(_('matriz de tono en tambor'));
     pitchDrumMatrixBlock.adjustWidthToLabel();
     pitchDrumMatrixBlock.stackClampZeroArgBlock();
 
     var pitchsliderBlock = new ProtoBlock('pitchslider');
     pitchsliderBlock.palette = palettes.dict['widgets'];
     blocks.protoBlockDict['pitchslider'] = pitchsliderBlock;
-    pitchsliderBlock.staticLabels.push(_('pitchslider'));
+    pitchsliderBlock.staticLabels.push(_('deslizador de tono'));
     pitchsliderBlock.adjustWidthToLabel();
     pitchsliderBlock.stackClampZeroArgBlock();
 
     var pitchstaircaseBlock = new ProtoBlock('pitchstaircase');
     pitchstaircaseBlock.palette = palettes.dict['widgets'];
     blocks.protoBlockDict['pitchstaircase'] = pitchstaircaseBlock;
-    pitchstaircaseBlock.staticLabels.push(_('pitch staircase'));
+    pitchstaircaseBlock.staticLabels.push(_('escalera de tono'));
     pitchstaircaseBlock.adjustWidthToLabel();
     pitchstaircaseBlock.stackClampZeroArgBlock();
 
     var rhythmrulerBlock = new ProtoBlock('rhythmruler');
     rhythmrulerBlock.palette = palettes.dict['widgets'];
     blocks.protoBlockDict['rhythmruler'] = rhythmrulerBlock;
-    rhythmrulerBlock.staticLabels.push(_('rhythm ruler'));
+    rhythmrulerBlock.staticLabels.push(_('regla de ritmo'));
     rhythmrulerBlock.adjustWidthToLabel();
     rhythmrulerBlock.stackClampOneArgBlock();
     rhythmrulerBlock.defaults.push(1);
@@ -406,14 +406,14 @@ function initBasicProtoBlocks(palettes, blocks) {
     var matrixBlock = new ProtoBlock('matrix');
     matrixBlock.palette = palettes.dict['widgets'];
     blocks.protoBlockDict['matrix'] = matrixBlock;
-    matrixBlock.staticLabels.push(_('pitch-time matrix'));
+    matrixBlock.staticLabels.push(_('matriz de tono en tiempo'));
     matrixBlock.adjustWidthToLabel();
     matrixBlock.stackClampZeroArgBlock();
 
     var statusBlock = new ProtoBlock('status');
     statusBlock.palette = palettes.dict['widgets'];
     blocks.protoBlockDict['status'] = statusBlock;
-    statusBlock.staticLabels.push(_('status'));
+    statusBlock.staticLabels.push(_('estatus'));
     statusBlock.adjustWidthToLabel();
     statusBlock.stackClampZeroArgBlock();
 
@@ -422,7 +422,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var turtleNoteBlock = new ProtoBlock('turtlenote');
     turtleNoteBlock.palette = palettes.dict['rhythm'];
     blocks.protoBlockDict['turtlenote'] = turtleNoteBlock;
-    turtleNoteBlock.staticLabels.push(_('turtle note value'));
+    turtleNoteBlock.staticLabels.push(_('valor de la nota de la tortuga'));
     turtleNoteBlock.oneArgMathBlock();
     turtleNoteBlock.adjustWidthToLabel();
     turtleNoteBlock.dockTypes[1] = 'anyin';
@@ -430,42 +430,42 @@ function initBasicProtoBlocks(palettes, blocks) {
     var duplicateFactor = new ProtoBlock('duplicatefactor');
     duplicateFactor.palette = palettes.dict['rhythm'];
     blocks.protoBlockDict['duplicatefactor'] = duplicateFactor;
-    duplicateFactor.staticLabels.push(_('duplicate factor'));
+    duplicateFactor.staticLabels.push(_('duplicar factor'));
     duplicateFactor.adjustWidthToLabel();
     duplicateFactor.parameterBlock();
 
     var skipFactor = new ProtoBlock('skipfactor');
     skipFactor.palette = palettes.dict['rhythm'];
     blocks.protoBlockDict['skipfactor'] = skipFactor;
-    skipFactor.staticLabels.push(_('skip factor'));
+    skipFactor.staticLabels.push(_('factor de salteo'));
     skipFactor.adjustWidthToLabel();
     skipFactor.parameterBlock();
 
     var beatfactor = new ProtoBlock('beatfactor');
     beatfactor.palette = palettes.dict['rhythm'];
     blocks.protoBlockDict['beatfactor'] = beatfactor;
-    beatfactor.staticLabels.push(_('beat factor'));
+    beatfactor.staticLabels.push(_('factor de ritmo'));
     beatfactor.adjustWidthToLabel();
     beatfactor.parameterBlock();
 
     var bpmBlock = new ProtoBlock('bpmfactor');
     bpmBlock.palette = palettes.dict['rhythm'];
     blocks.protoBlockDict['bpmfactor'] = bpmBlock;
-    bpmBlock.staticLabels.push(_('beats per minute'));
+    bpmBlock.staticLabels.push(_('pulsaciones por minuto'));
     bpmBlock.adjustWidthToLabel();
     bpmBlock.parameterBlock();
 
     var driftBlock = new ProtoBlock('drift');
     driftBlock.palette = palettes.dict['rhythm'];
     blocks.protoBlockDict['drift'] = driftBlock;
-    driftBlock.staticLabels.push(_('free time'));
+    driftBlock.staticLabels.push(_('tiempo libre'));
     driftBlock.adjustWidthToLabel();
     driftBlock.flowClampZeroArgBlock();
 
     var osctimeBlock = new ProtoBlock('osctime');
     osctimeBlock.palette = palettes.dict['rhythm'];
     blocks.protoBlockDict['osctime'] = osctimeBlock;
-    osctimeBlock.staticLabels.push(_('osctime'));
+    osctimeBlock.staticLabels.push(_('tiempo oscilador'));
     osctimeBlock.adjustWidthToLabel();
     osctimeBlock.flowClampOneArgBlock();
     osctimeBlock.defaults.push(200);
@@ -491,7 +491,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var newswingBlock = new ProtoBlock('newswing2');
     newswingBlock.palette = palettes.dict['rhythm'];
     blocks.protoBlockDict['newswing2'] = newswingBlock;
-    newswingBlock.staticLabels.push(_('swing'), _('swing value'), _('note value'));
+    newswingBlock.staticLabels.push(_('swing'), _('valor de swing'), _('valor de la nota'));
     newswingBlock.extraWidth = 20;
     newswingBlock.adjustWidthToLabel();
     newswingBlock.flowClampTwoArgBlock();
@@ -501,7 +501,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var setbpmBlock = new ProtoBlock('setbpm');
     setbpmBlock.palette = palettes.dict['rhythm'];
     blocks.protoBlockDict['setbpm'] = setbpmBlock;
-    setbpmBlock.staticLabels.push(_('beats per minute'));
+    setbpmBlock.staticLabels.push(_('pulsaciones por minuto'));
     setbpmBlock.adjustWidthToLabel();
     setbpmBlock.flowClampOneArgBlock();
     setbpmBlock.defaults.push(90);
@@ -509,14 +509,14 @@ function initBasicProtoBlocks(palettes, blocks) {
     var backwardBlock = new ProtoBlock('backward');
     backwardBlock.palette = palettes.dict['rhythm'];
     blocks.protoBlockDict['backward'] = backwardBlock;
-    backwardBlock.staticLabels.push(_('backward'));
+    backwardBlock.staticLabels.push(_('hacia atrás'));
     backwardBlock.adjustWidthToLabel();
     backwardBlock.flowClampZeroArgBlock();
 
     var skipNotesBlock = new ProtoBlock('skipnotes');
     skipNotesBlock.palette = palettes.dict['rhythm'];
     blocks.protoBlockDict['skipnotes'] = skipNotesBlock;
-    skipNotesBlock.staticLabels.push(_('skip notes'));
+    skipNotesBlock.staticLabels.push(_('saltar notas'));
     skipNotesBlock.adjustWidthToLabel();
     skipNotesBlock.flowClampOneArgBlock();
     skipNotesBlock.defaults.push(2);
@@ -524,7 +524,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var duplicateNotesBlock = new ProtoBlock('duplicatenotes');
     duplicateNotesBlock.palette = palettes.dict['rhythm'];
     blocks.protoBlockDict['duplicatenotes'] = duplicateNotesBlock;
-    duplicateNotesBlock.staticLabels.push(_('duplicate notes'));
+    duplicateNotesBlock.staticLabels.push(_('notas duplicadas'));
     duplicateNotesBlock.adjustWidthToLabel();
     duplicateNotesBlock.flowClampOneArgBlock();
     duplicateNotesBlock.defaults.push(2);
@@ -532,7 +532,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var beatFactorBlock = new ProtoBlock('multiplybeatfactor');
     beatFactorBlock.palette = palettes.dict['rhythm'];
     blocks.protoBlockDict['multiplybeatfactor'] = beatFactorBlock;
-    beatFactorBlock.staticLabels.push(_('multiply beat value'));
+    beatFactorBlock.staticLabels.push(_('ritmo multiplican'));
     beatFactorBlock.adjustWidthToLabel();
     beatFactorBlock.flowClampOneArgBlock();
     beatFactorBlock.defaults.push(2);
@@ -540,7 +540,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var beatFactorBlock2 = new ProtoBlock('dividebeatfactor');
     beatFactorBlock2.palette = palettes.dict['rhythm'];
     blocks.protoBlockDict['dividebeatfactor'] = beatFactorBlock2;
-    beatFactorBlock2.staticLabels.push(_('divide beat value'));
+    beatFactorBlock2.staticLabels.push(_('dividir tiempo'));
     beatFactorBlock2.adjustWidthToLabel();
     beatFactorBlock2.flowClampOneArgBlock();
     beatFactorBlock2.defaults.push(2);
@@ -555,42 +555,42 @@ function initBasicProtoBlocks(palettes, blocks) {
     var rhythmicdotBlock = new ProtoBlock('rhythmicdot');
     rhythmicdotBlock.palette = palettes.dict['rhythm'];
     blocks.protoBlockDict['rhythmicdot'] = rhythmicdotBlock;
-    rhythmicdotBlock.staticLabels.push(_('dot'));
+    rhythmicdotBlock.staticLabels.push(_('punto'));
     rhythmicdotBlock.adjustWidthToLabel();
     rhythmicdotBlock.flowClampZeroArgBlock();
 
     var rest2Block = new ProtoBlock('rest2');
     rest2Block.palette = palettes.dict['rhythm'];
     blocks.protoBlockDict['rest2'] = rest2Block;
-    rest2Block.staticLabels.push(_('silence'));
+    rest2Block.staticLabels.push(_('silencio'));
     rest2Block.adjustWidthToLabel();
     rest2Block.zeroArgBlock();
 
     var note4Block = new ProtoBlock('note4');
     note4Block.palette = palettes.dict['rhythm'];
     blocks.protoBlockDict['note4'] = note4Block;
-    note4Block.staticLabels.push(_('note value') + ' ' + _('drum'));
+    note4Block.staticLabels.push(_('valor de la nota') + ' ' + _('tambor'));
     note4Block.adjustWidthToLabel();
     note4Block.zeroArgBlock();
 
     var note3Block = new ProtoBlock('note3');
     note3Block.palette = palettes.dict['rhythm'];
     blocks.protoBlockDict['note3'] = note3Block;
-    note3Block.staticLabels.push(_('note value') + ' ' + _('440 hertz'));
+    note3Block.staticLabels.push(_('valor de la nota') + ' ' + _('440 hertz'));
     note3Block.adjustWidthToLabel();
     note3Block.zeroArgBlock();
 
     var note2Block = new ProtoBlock('note2');
     note2Block.palette = palettes.dict['rhythm'];
     blocks.protoBlockDict['note2'] = note2Block;
-    note2Block.staticLabels.push(_('note value') + ' ' + 'A4');
+    note2Block.staticLabels.push(_('valor de la nota') + ' ' + 'A4');
     note2Block.adjustWidthToLabel();
     note2Block.zeroArgBlock();
 
     var note1Block = new ProtoBlock('note1');
     note1Block.palette = palettes.dict['rhythm'];
     blocks.protoBlockDict['note1'] = note1Block;
-    note1Block.staticLabels.push(_('note value') + ' ' + i18nSolfege('la') + '4');
+    note1Block.staticLabels.push(_('valor de la nota') + ' ' + i18nSolfege('la') + '4');
     note1Block.adjustWidthToLabel();
     note1Block.zeroArgBlock();
 
@@ -598,7 +598,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     noteBlock.palette = palettes.dict['rhythm'];
     blocks.protoBlockDict['note'] = noteBlock;
     noteBlock.hidden = true;
-    noteBlock.staticLabels.push('deprecated ' + _('note value'));
+    noteBlock.staticLabels.push('deprecated ' + _('valor de la nota'));
     noteBlock.adjustWidthToLabel();
     noteBlock.flowClampOneArgBlock();
     noteBlock.defaults.push(8);
@@ -606,7 +606,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var newnoteBlock = new ProtoBlock('newnote');
     newnoteBlock.palette = palettes.dict['rhythm'];
     blocks.protoBlockDict['newnote'] = newnoteBlock;
-    newnoteBlock.staticLabels.push(_('note value'));
+    newnoteBlock.staticLabels.push(_('valor de la nota'));
     newnoteBlock.adjustWidthToLabel();
     newnoteBlock.flowClampOneArgBlock();
     newnoteBlock.defaults.push(1 / 8);
@@ -618,7 +618,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     noteVolumeBlock.palette = palettes.dict['tone'];
     blocks.protoBlockDict['setnotevolume'] = noteVolumeBlock;
     noteVolumeBlock.hidden = true;
-    noteVolumeBlock.staticLabels.push(_('set volume'));
+    noteVolumeBlock.staticLabels.push(_('fijar volumen'));
     noteVolumeBlock.adjustWidthToLabel();
     noteVolumeBlock.oneArgBlock();
     noteVolumeBlock.defaults.push(50);
@@ -626,28 +626,28 @@ function initBasicProtoBlocks(palettes, blocks) {
     var staccatoFactor = new ProtoBlock('staccatofactor');
     staccatoFactor.palette = palettes.dict['tone'];
     blocks.protoBlockDict['staccatofactor'] = staccatoFactor;
-    staccatoFactor.staticLabels.push(_('staccato factor'));
+    staccatoFactor.staticLabels.push(_('factor de staccato'));
     staccatoFactor.adjustWidthToLabel();
     staccatoFactor.parameterBlock();
 
     var slurFactor = new ProtoBlock('slurfactor');
     slurFactor.palette = palettes.dict['tone'];
     blocks.protoBlockDict['slurfactor'] = slurFactor;
-    slurFactor.staticLabels.push(_('slur factor'));
+    slurFactor.staticLabels.push(_('factor de legato'));
     slurFactor.adjustWidthToLabel();
     slurFactor.parameterBlock();
 
     var notevolumeFactor = new ProtoBlock('notevolumefactor');
     notevolumeFactor.palette = palettes.dict['tone'];
     blocks.protoBlockDict['notevolumefactor'] = notevolumeFactor;
-    notevolumeFactor.staticLabels.push(_('note volume'));
+    notevolumeFactor.staticLabels.push(_('volumen nota'));
     notevolumeFactor.adjustWidthToLabel();
     notevolumeFactor.parameterBlock();
 
     var keyBlock = new ProtoBlock('key');
     keyBlock.palette = palettes.dict['tone'];
     blocks.protoBlockDict['key'] = keyBlock;
-    keyBlock.staticLabels.push(_('key'));
+    keyBlock.staticLabels.push(_('clave'));
     keyBlock.adjustWidthToLabel();
     keyBlock.parameterBlock();
 
@@ -656,7 +656,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     setkeyBlock.hidden = true;
     setkeyBlock.palette = palettes.dict['tone'];
     blocks.protoBlockDict['setkey'] = setkeyBlock;
-    setkeyBlock.staticLabels.push(_('set key'));
+    setkeyBlock.staticLabels.push(_('fijar clave'));
     setkeyBlock.adjustWidthToLabel();
     setkeyBlock.oneArgBlock();
     setkeyBlock.dockTypes[1] = 'textin';
@@ -665,7 +665,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var setkey2Block = new ProtoBlock('setkey2');
     setkey2Block.palette = palettes.dict['tone'];
     blocks.protoBlockDict['setkey2'] = setkey2Block;
-    setkey2Block.staticLabels.push(_('set key'), _('key'), _('mode'));
+    setkey2Block.staticLabels.push(_('fijar clave'), _('clave'), _('modo'));
     setkey2Block.adjustWidthToLabel();
     setkey2Block.twoArgBlock();
     setkey2Block.dockTypes[1] = 'anyin';
@@ -675,7 +675,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     meter.palette = palettes.dict['tone'];
     blocks.protoBlockDict['meter'] = meter;
     meter.hidden = true;
-    meter.staticLabels.push(_('meter'), _('numerator'), _('denominator'));
+    meter.staticLabels.push(_('metro'), _('numerador'), _('denominador'));
     meter.adjustWidthToLabel();
     meter.defaults.push(3);
     meter.defaults.push(4);
@@ -686,7 +686,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var setMasterBPMBlock = new ProtoBlock('setmasterbpm');
     setMasterBPMBlock.palette = palettes.dict['tone'];
     blocks.protoBlockDict['setmasterbpm'] = setMasterBPMBlock;
-    setMasterBPMBlock.staticLabels.push(_('master beats per minute'));
+    setMasterBPMBlock.staticLabels.push(_('latidos por minuto de dominar'));
     setMasterBPMBlock.adjustWidthToLabel();
     setMasterBPMBlock.oneArgBlock();
     setMasterBPMBlock.defaults.push(90);
@@ -700,7 +700,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var voiceBlock = new ProtoBlock('setvoice');
     voiceBlock.palette = palettes.dict['tone'];
     blocks.protoBlockDict['setvoice'] = voiceBlock;
-    voiceBlock.staticLabels.push(_('set voice'));
+    voiceBlock.staticLabels.push(_('fijar voz'));
     voiceBlock.adjustWidthToLabel();
     voiceBlock.flowClampOneArgBlock();
     voiceBlock.dockTypes[1] = 'textin';
@@ -709,7 +709,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var articulationBlock = new ProtoBlock('articulation');
     articulationBlock.palette = palettes.dict['tone'];
     blocks.protoBlockDict['articulation'] = articulationBlock;
-    articulationBlock.staticLabels.push(_('articulation'));
+    articulationBlock.staticLabels.push(_('articulación'));
     articulationBlock.adjustWidthToLabel();
     articulationBlock.flowClampOneArgBlock();
     articulationBlock.defaults.push(25);
@@ -773,7 +773,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var noteVolumeBlock2 = new ProtoBlock('setnotevolume2');
     noteVolumeBlock2.palette = palettes.dict['tone'];
     blocks.protoBlockDict['setnotevolume2'] = noteVolumeBlock2;
-    noteVolumeBlock2.staticLabels.push(_('set volume'));
+    noteVolumeBlock2.staticLabels.push(_('fijar volumen'));
     noteVolumeBlock2.adjustWidthToLabel();
     noteVolumeBlock2.flowClampOneArgBlock();
     noteVolumeBlock2.defaults.push(50);
@@ -789,7 +789,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var slurBlock = new ProtoBlock('slur');
     slurBlock.palette = palettes.dict['tone'];
     blocks.protoBlockDict['slur'] = slurBlock;
-    slurBlock.staticLabels.push(_('slur'));
+    slurBlock.staticLabels.push(_('legato'));
     slurBlock.adjustWidthToLabel();
     slurBlock.flowClampOneArgBlock();
     slurBlock.defaults.push(16);
@@ -807,7 +807,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var newslurBlock = new ProtoBlock('newslur');
     newslurBlock.palette = palettes.dict['tone'];
     blocks.protoBlockDict['newslur'] = newslurBlock;
-    newslurBlock.staticLabels.push(_('slur'));
+    newslurBlock.staticLabels.push(_('legato'));
     newslurBlock.adjustWidthToLabel();
     newslurBlock.flowClampOneArgBlock();
     newslurBlock.defaults.push(1 / 16);
@@ -825,35 +825,35 @@ function initBasicProtoBlocks(palettes, blocks) {
     var minor7Block = new ProtoBlock('minor7');
     minor7Block.palette = palettes.dict['intervals'];
     blocks.protoBlockDict['minor7'] = minor7Block;
-    minor7Block.staticLabels.push(_('minor') +  ' 7');
+    minor7Block.staticLabels.push(_('menor') +  ' 7');
     minor7Block.adjustWidthToLabel();
     minor7Block.zeroArgBlock();
 
     var minor6Block = new ProtoBlock('minor6');
     minor6Block.palette = palettes.dict['intervals'];
     blocks.protoBlockDict['minor6'] = minor6Block;
-    minor6Block.staticLabels.push(_('minor') + ' 6');
+    minor6Block.staticLabels.push(_('menor') + ' 6');
     minor6Block.adjustWidthToLabel();
     minor6Block.zeroArgBlock();
     
     var minor3Block = new ProtoBlock('minor3');
     minor3Block.palette = palettes.dict['intervals'];
     blocks.protoBlockDict['minor3'] = minor3Block;
-    minor3Block.staticLabels.push(_('minor') + ' 3');
+    minor3Block.staticLabels.push(_('menor') + ' 3');
     minor3Block.adjustWidthToLabel();
     minor3Block.zeroArgBlock();
 
     var minor2Block = new ProtoBlock('minor2');
     minor2Block.palette = palettes.dict['intervals'];
     blocks.protoBlockDict['minor2'] = minor2Block;
-    minor2Block.staticLabels.push(_('minor') + ' 2');
+    minor2Block.staticLabels.push(_('menor') + ' 2');
     minor2Block.adjustWidthToLabel();
     minor2Block.zeroArgBlock();
     
     var minorBlock = new ProtoBlock('minor');
     minorBlock.palette = palettes.dict['intervals'];
     blocks.protoBlockDict['minor'] = minorBlock;
-    minorBlock.staticLabels.push(_('minor'));
+    minorBlock.staticLabels.push(_('menor'));
     minorBlock.adjustWidthToLabel();
     minorBlock.flowClampOneArgBlock();
     minorBlock.defaults.push(3);
@@ -861,35 +861,35 @@ function initBasicProtoBlocks(palettes, blocks) {
     var major7Block = new ProtoBlock('major7');
     major7Block.palette = palettes.dict['intervals'];
     blocks.protoBlockDict['major7'] = major7Block;
-    major7Block.staticLabels.push(_('major') + ' 7');
+    major7Block.staticLabels.push(_('mayor') + ' 7');
     major7Block.adjustWidthToLabel();
     major7Block.zeroArgBlock();
 
     var major6Block = new ProtoBlock('major6');
     major6Block.palette = palettes.dict['intervals'];
     blocks.protoBlockDict['major6'] = major6Block;
-    major6Block.staticLabels.push(_('major') + ' 6');
+    major6Block.staticLabels.push(_('mayor') + ' 6');
     major6Block.adjustWidthToLabel();
     major6Block.zeroArgBlock();
     
     var major3Block = new ProtoBlock('major3');
     major3Block.palette = palettes.dict['intervals'];
     blocks.protoBlockDict['major3'] = major3Block;
-    major3Block.staticLabels.push(_('major') + ' 3');
+    major3Block.staticLabels.push(_('mayor') + ' 3');
     major3Block.adjustWidthToLabel();
     major3Block.zeroArgBlock();
 
     var major2Block = new ProtoBlock('major2');
     major2Block.palette = palettes.dict['intervals'];
     blocks.protoBlockDict['major2'] = major2Block;
-    major2Block.staticLabels.push(_('major') + ' 2');
+    major2Block.staticLabels.push(_('mayor') + ' 2');
     major2Block.adjustWidthToLabel();
     major2Block.zeroArgBlock();
     
     var majorBlock = new ProtoBlock('major');
     majorBlock.palette = palettes.dict['intervals'];
     blocks.protoBlockDict['major'] = majorBlock;
-    majorBlock.staticLabels.push(_('major'));
+    majorBlock.staticLabels.push(_('mayor'));
     majorBlock.adjustWidthToLabel();
     majorBlock.flowClampOneArgBlock();
     majorBlock.defaults.push(3);
@@ -897,35 +897,35 @@ function initBasicProtoBlocks(palettes, blocks) {
     var diminished8Block = new ProtoBlock('diminished8');
     diminished8Block.palette = palettes.dict['intervals'];
     blocks.protoBlockDict['diminished8'] = diminished8Block;
-    diminished8Block.staticLabels.push(_('diminished') + ' 8');
+    diminished8Block.staticLabels.push(_('disminuido') + ' 8');
     diminished8Block.adjustWidthToLabel();
     diminished8Block.zeroArgBlock();
 
     var diminished5Block = new ProtoBlock('diminished5');
     diminished5Block.palette = palettes.dict['intervals'];
     blocks.protoBlockDict['diminished5'] = diminished5Block;
-    diminished5Block.staticLabels.push(_('diminished') + ' 5');
+    diminished5Block.staticLabels.push(_('disminuido') + ' 5');
     diminished5Block.adjustWidthToLabel();
     diminished5Block.zeroArgBlock();
     
     var diminished4Block = new ProtoBlock('diminished4');
     diminished4Block.palette = palettes.dict['intervals'];
     blocks.protoBlockDict['diminished4'] = diminished4Block;
-    diminished4Block.staticLabels.push(_('diminished') + ' 4');
+    diminished4Block.staticLabels.push(_('disminuido') + ' 4');
     diminished4Block.adjustWidthToLabel();
     diminished4Block.zeroArgBlock();
 
     var diminished1Block = new ProtoBlock('diminished1');
     diminished1Block.palette = palettes.dict['intervals'];
     blocks.protoBlockDict['diminished1'] = diminished1Block;
-    diminished1Block.staticLabels.push(_('diminished') + ' 1');
+    diminished1Block.staticLabels.push(_('disminuido') + ' 1');
     diminished1Block.adjustWidthToLabel();
     diminished1Block.zeroArgBlock();
     
     var diminishedBlock = new ProtoBlock('diminished');
     diminishedBlock.palette = palettes.dict['intervals'];
     blocks.protoBlockDict['diminished'] = diminishedBlock;
-    diminishedBlock.staticLabels.push(_('diminished'));
+    diminishedBlock.staticLabels.push(_('disminuido'));
     diminishedBlock.adjustWidthToLabel();
     diminishedBlock.flowClampOneArgBlock();
     diminishedBlock.defaults.push(5);
@@ -933,35 +933,35 @@ function initBasicProtoBlocks(palettes, blocks) {
     var perfect8Block = new ProtoBlock('perfect8');
     perfect8Block.palette = palettes.dict['intervals'];
     blocks.protoBlockDict['perfect8'] = perfect8Block;
-    perfect8Block.staticLabels.push(_('perfect') + ' 8');
+    perfect8Block.staticLabels.push(_('perfecto') + ' 8');
     perfect8Block.adjustWidthToLabel();
     perfect8Block.zeroArgBlock();
 
     var perfect5Block = new ProtoBlock('perfect5');
     perfect5Block.palette = palettes.dict['intervals'];
     blocks.protoBlockDict['perfect5'] = perfect5Block;
-    perfect5Block.staticLabels.push(_('perfect') + ' 5');
+    perfect5Block.staticLabels.push(_('perfecto') + ' 5');
     perfect5Block.adjustWidthToLabel();
     perfect5Block.zeroArgBlock();
     
     var perfect4Block = new ProtoBlock('perfect4');
     perfect4Block.palette = palettes.dict['intervals'];
     blocks.protoBlockDict['perfect4'] = perfect4Block;
-    perfect4Block.staticLabels.push(_('perfect') + ' 4');
+    perfect4Block.staticLabels.push(_('perfecto') + ' 4');
     perfect4Block.adjustWidthToLabel();
     perfect4Block.zeroArgBlock();
 
     var perfect1Block = new ProtoBlock('perfect1');
     perfect1Block.palette = palettes.dict['intervals'];
     blocks.protoBlockDict['perfect1'] = perfect1Block;
-    perfect1Block.staticLabels.push(_('perfect') + ' 1');
+    perfect1Block.staticLabels.push(_('perfecto') + ' 1');
     perfect1Block.adjustWidthToLabel();
     perfect1Block.zeroArgBlock();
 
     var perfectBlock = new ProtoBlock('perfect');
     perfectBlock.palette = palettes.dict['intervals'];
     blocks.protoBlockDict['perfect'] = perfectBlock;
-    perfectBlock.staticLabels.push(_('perfect'));
+    perfectBlock.staticLabels.push(_('perfecto'));
     perfectBlock.adjustWidthToLabel();
     perfectBlock.flowClampOneArgBlock();
     perfectBlock.defaults.push(5);
@@ -969,35 +969,35 @@ function initBasicProtoBlocks(palettes, blocks) {
     var augmented8Block = new ProtoBlock('augmented8');
     augmented8Block.palette = palettes.dict['intervals'];
     blocks.protoBlockDict['augmented8'] = augmented8Block;
-    augmented8Block.staticLabels.push(_('augmented') + ' 8');
+    augmented8Block.staticLabels.push(_('aumentado') + ' 8');
     augmented8Block.adjustWidthToLabel();
     augmented8Block.zeroArgBlock();
 
     var augmented5Block = new ProtoBlock('augmented5');
     augmented5Block.palette = palettes.dict['intervals'];
     blocks.protoBlockDict['augmented5'] = augmented5Block;
-    augmented5Block.staticLabels.push(_('augmented') + ' 5');
+    augmented5Block.staticLabels.push(_('aumentado') + ' 5');
     augmented5Block.adjustWidthToLabel();
     augmented5Block.zeroArgBlock();
     
     var augmented4Block = new ProtoBlock('augmented4');
     augmented4Block.palette = palettes.dict['intervals'];
     blocks.protoBlockDict['augmented4'] = augmented4Block;
-    augmented4Block.staticLabels.push(_('augmented') + ' 4');
+    augmented4Block.staticLabels.push(_('aumentado') + ' 4');
     augmented4Block.adjustWidthToLabel();
     augmented4Block.zeroArgBlock();
 
     var augmented1Block = new ProtoBlock('augmented1');
     augmented1Block.palette = palettes.dict['intervals'];
     blocks.protoBlockDict['augmented1'] = augmented1Block;
-    augmented1Block.staticLabels.push(_('augmented') + ' 1');
+    augmented1Block.staticLabels.push(_('aumentado') + ' 1');
     augmented1Block.adjustWidthToLabel();
     augmented1Block.zeroArgBlock();
 
     var augmentedBlock = new ProtoBlock('augmented');
     augmentedBlock.palette = palettes.dict['intervals'];
     blocks.protoBlockDict['augmented'] = augmentedBlock;
-    augmentedBlock.staticLabels.push(_('augmented'));
+    augmentedBlock.staticLabels.push(_('aumentado'));
     augmentedBlock.adjustWidthToLabel();
     augmentedBlock.flowClampOneArgBlock();
     augmentedBlock.defaults.push(5);
@@ -1005,7 +1005,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var intervalBlock = new ProtoBlock('interval');
     intervalBlock.palette = palettes.dict['intervals'];
     blocks.protoBlockDict['interval'] = intervalBlock;
-    intervalBlock.staticLabels.push(_('relative interval'));
+    intervalBlock.staticLabels.push(_('intervalo relativa'));
     intervalBlock.adjustWidthToLabel();
     intervalBlock.flowClampOneArgBlock();
     intervalBlock.defaults.push(5);
@@ -1020,49 +1020,49 @@ function initBasicProtoBlocks(palettes, blocks) {
     var duckBlock = new ProtoBlock('duck');
     duckBlock.palette = palettes.dict['drum'];
     blocks.protoBlockDict['duck'] = duckBlock;
-    duckBlock.staticLabels.push(_('duck'));
+    duckBlock.staticLabels.push(_('pato'));
     duckBlock.adjustWidthToLabel();
     duckBlock.oneArgBlock();
 
     var catBlock = new ProtoBlock('cat');
     catBlock.palette = palettes.dict['drum'];
     blocks.protoBlockDict['cat'] = catBlock;
-    catBlock.staticLabels.push(_('cat'));
+    catBlock.staticLabels.push(_('gato'));
     catBlock.adjustWidthToLabel();
     catBlock.oneArgBlock();
 
     var cricketBlock = new ProtoBlock('cricket');
     cricketBlock.palette = palettes.dict['drum'];
     blocks.protoBlockDict['cricket'] = cricketBlock;
-    cricketBlock.staticLabels.push(_('cricket'));
+    cricketBlock.staticLabels.push(_('grillo'));
     cricketBlock.adjustWidthToLabel();
     cricketBlock.oneArgBlock();
 
     var dogBlock = new ProtoBlock('dog');
     dogBlock.palette = palettes.dict['drum'];
     blocks.protoBlockDict['dog'] = dogBlock;
-    dogBlock.staticLabels.push(_('dog'));
+    dogBlock.staticLabels.push(_('perro'));
     dogBlock.adjustWidthToLabel();
     dogBlock.oneArgBlock();
 
     var pluckBlock = new ProtoBlock('pluck');
     pluckBlock.palette = palettes.dict['drum'];
     blocks.protoBlockDict['pluck'] = pluckBlock;
-    pluckBlock.staticLabels.push(_('pluck'));
+    pluckBlock.staticLabels.push(_('puntear'));
     pluckBlock.adjustWidthToLabel();
     pluckBlock.oneArgBlock();
 
     var bottleBlock = new ProtoBlock('bottle');
     bottleBlock.palette = palettes.dict['drum'];
     blocks.protoBlockDict['bottle'] = bottleBlock;
-    bottleBlock.staticLabels.push(_('bottle'));
+    bottleBlock.staticLabels.push(_('botella'));
     bottleBlock.adjustWidthToLabel();
     bottleBlock.oneArgBlock();
 
     var bubblesBlock = new ProtoBlock('bubbles');
     bubblesBlock.palette = palettes.dict['drum'];
     blocks.protoBlockDict['bubbles'] = bubblesBlock;
-    bubblesBlock.staticLabels.push(_('bubbles'));
+    bubblesBlock.staticLabels.push(_('burbujas'));
     bubblesBlock.adjustWidthToLabel();
     bubblesBlock.oneArgBlock();
 
@@ -1076,42 +1076,42 @@ function initBasicProtoBlocks(palettes, blocks) {
     var clangBlock = new ProtoBlock('clang');
     clangBlock.palette = palettes.dict['drum'];
     blocks.protoBlockDict['clang'] = clangBlock;
-    clangBlock.staticLabels.push(_('clang'));
+    clangBlock.staticLabels.push(_('estruendo'));
     clangBlock.adjustWidthToLabel();
     clangBlock.oneArgBlock();
 
     var clapBlock = new ProtoBlock('clap');
     clapBlock.palette = palettes.dict['drum'];
     blocks.protoBlockDict['clap'] = clapBlock;
-    clapBlock.staticLabels.push(_('clap'));
+    clapBlock.staticLabels.push(_('palmada'));
     clapBlock.adjustWidthToLabel();
     clapBlock.oneArgBlock();
 
     var slapBlock = new ProtoBlock('slap');
     slapBlock.palette = palettes.dict['drum'];
     blocks.protoBlockDict['slap'] = slapBlock;
-    slapBlock.staticLabels.push(_('slap'));
+    slapBlock.staticLabels.push(_('bofetada'));
     slapBlock.adjustWidthToLabel();
     slapBlock.oneArgBlock();
 
     var crashBlock = new ProtoBlock('crash');
     crashBlock.palette = palettes.dict['drum'];
     blocks.protoBlockDict['crash'] = crashBlock;
-    crashBlock.staticLabels.push(_('crash'));
+    crashBlock.staticLabels.push(_('choque'));
     crashBlock.adjustWidthToLabel();
     crashBlock.oneArgBlock();
 
     var splashBlock = new ProtoBlock('tom');
     splashBlock.palette = palettes.dict['drum'];
     blocks.protoBlockDict['tom'] = splashBlock;
-    splashBlock.staticLabels.push(_('splash'));
+    splashBlock.staticLabels.push(_('salpicadura'));
     splashBlock.adjustWidthToLabel();
     splashBlock.oneArgBlock();
 
     var cowbellBlock = new ProtoBlock('cowbell');
     cowbellBlock.palette = palettes.dict['drum'];
     blocks.protoBlockDict['cowbell'] = cowbellBlock;
-    cowbellBlock.staticLabels.push(_('cow bell'));
+    cowbellBlock.staticLabels.push(_('cencerro'));
     cowbellBlock.adjustWidthToLabel();
     cowbellBlock.oneArgBlock();
 
@@ -1125,14 +1125,14 @@ function initBasicProtoBlocks(palettes, blocks) {
     var fingercymbalsBlock = new ProtoBlock('fingercymbals');
     fingercymbalsBlock.palette = palettes.dict['drum'];
     blocks.protoBlockDict['fingercymbals'] = fingercymbalsBlock;
-    fingercymbalsBlock.staticLabels.push(_('finger cymbals'));
+    fingercymbalsBlock.staticLabels.push(_('castañuelas'));
     fingercymbalsBlock.adjustWidthToLabel();
     fingercymbalsBlock.oneArgBlock();
 
     var trianglebellBlock = new ProtoBlock('trianglebell');
     trianglebellBlock.palette = palettes.dict['drum'];
     blocks.protoBlockDict['trianglebell'] = trianglebellBlock;
-    trianglebellBlock.staticLabels.push(_('triangle bell'));
+    trianglebellBlock.staticLabels.push(_('campana triángulo'));
     trianglebellBlock.adjustWidthToLabel();
     trianglebellBlock.oneArgBlock();
 
@@ -1146,21 +1146,21 @@ function initBasicProtoBlocks(palettes, blocks) {
     var darbukaBlock = new ProtoBlock('darbuka');
     darbukaBlock.palette = palettes.dict['drum'];
     blocks.protoBlockDict['darbuka'] = darbukaBlock;
-    darbukaBlock.staticLabels.push(_('darbuka drum'));
+    darbukaBlock.staticLabels.push(_('darbuka'));
     darbukaBlock.adjustWidthToLabel();
     darbukaBlock.oneArgBlock();
 
     var cupBlock = new ProtoBlock('cup');
     cupBlock.palette = palettes.dict['drum'];
     blocks.protoBlockDict['cup'] = cupBlock;
-    cupBlock.staticLabels.push(_('cup drum'));
+    cupBlock.staticLabels.push(_('tambor taza'));
     cupBlock.adjustWidthToLabel();
     cupBlock.oneArgBlock();
 
     var floortomBlock = new ProtoBlock('floortom');
     floortomBlock.palette = palettes.dict['drum'];
     blocks.protoBlockDict['floortom'] = floortomBlock;
-    floortomBlock.staticLabels.push(_('floor tom tom'));
+    floortomBlock.staticLabels.push(_('tom tom de piso'));
     floortomBlock.adjustWidthToLabel();
     floortomBlock.oneArgBlock();
 
@@ -1174,21 +1174,21 @@ function initBasicProtoBlocks(palettes, blocks) {
     var kickBlock = new ProtoBlock('kick');
     kickBlock.palette = palettes.dict['drum'];
     blocks.protoBlockDict['kick'] = kickBlock;
-    kickBlock.staticLabels.push(_('kick drum'));
+    kickBlock.staticLabels.push(_('bombo'));
     kickBlock.adjustWidthToLabel();
     kickBlock.oneArgBlock();
 
     var snareBlock = new ProtoBlock('snare');
     snareBlock.palette = palettes.dict['drum'];
     blocks.protoBlockDict['snare'] = snareBlock;
-    snareBlock.staticLabels.push(_('snare drum'));
+    snareBlock.staticLabels.push(_('tambor militar pequeño'));
     snareBlock.adjustWidthToLabel();
     snareBlock.oneArgBlock();
 
     var setdrumBlock = new ProtoBlock('setdrum');
     setdrumBlock.palette = palettes.dict['drum'];
     blocks.protoBlockDict['setdrum'] = setdrumBlock;
-    setdrumBlock.staticLabels.push(_('set drum'));
+    setdrumBlock.staticLabels.push(_('fijar tambor'));
     setdrumBlock.adjustWidthToLabel();
     setdrumBlock.flowClampOneArgBlock();
     setdrumBlock.dockTypes[1] = 'anyin';
@@ -1196,7 +1196,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var playdrumBlock = new ProtoBlock('playdrum');
     playdrumBlock.palette = palettes.dict['drum'];
     blocks.protoBlockDict['playdrum'] = playdrumBlock;
-    playdrumBlock.staticLabels.push(_('drum'));
+    playdrumBlock.staticLabels.push(_('tambor'));
     playdrumBlock.adjustWidthToLabel();
     playdrumBlock.oneArgBlock();
     playdrumBlock.dockTypes[1] = 'anyin';
@@ -1206,7 +1206,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var headingBlock = new ProtoBlock('heading');
     headingBlock.palette = palettes.dict['turtle'];
     blocks.protoBlockDict['heading'] = headingBlock;
-    headingBlock.staticLabels.push(_('heading'));
+    headingBlock.staticLabels.push(_('rumbo'));
     headingBlock.adjustWidthToLabel();
     headingBlock.parameterBlock();
 
@@ -1227,14 +1227,14 @@ function initBasicProtoBlocks(palettes, blocks) {
     var clearBlock = new ProtoBlock('clear');
     clearBlock.palette = palettes.dict['turtle'];
     blocks.protoBlockDict['clear'] = clearBlock;
-    clearBlock.staticLabels.push(_('clear'));
+    clearBlock.staticLabels.push(_('limpiar'));
     clearBlock.adjustWidthToLabel();
     clearBlock.zeroArgBlock();
 
     var controlPoint2Block = new ProtoBlock('controlpoint2');
     controlPoint2Block.palette = palettes.dict['turtle'];
     blocks.protoBlockDict['controlpoint2'] = controlPoint2Block;
-    controlPoint2Block.staticLabels.push(_('control point 2'), _('x'), _('y'));
+    controlPoint2Block.staticLabels.push(_('punto de control 2'), _('x'), _('y'));
     controlPoint2Block.adjustWidthToLabel();
     controlPoint2Block.twoArgBlock();
     controlPoint2Block.defaults.push(100);
@@ -1245,7 +1245,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var controlPoint1Block = new ProtoBlock('controlpoint1');
     controlPoint1Block.palette = palettes.dict['turtle'];
     blocks.protoBlockDict['controlpoint1'] = controlPoint1Block;
-    controlPoint1Block.staticLabels.push(_('control point 1'), _('x'), _('y'));
+    controlPoint1Block.staticLabels.push(_('punto de control 1'), _('x'), _('y'));
     controlPoint1Block.adjustWidthToLabel();
     controlPoint1Block.twoArgBlock();
     controlPoint1Block.defaults.push(100);
@@ -1267,7 +1267,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var arcBlock = new ProtoBlock('arc');
     arcBlock.palette = palettes.dict['turtle'];
     blocks.protoBlockDict['arc'] = arcBlock;
-    arcBlock.staticLabels.push(_('arc'), _('angle'), _('radius'));
+    arcBlock.staticLabels.push(_('arco'), _('ángulo'), _('radio'));
     arcBlock.adjustWidthToLabel();
     arcBlock.twoArgBlock();
     arcBlock.defaults.push(90);
@@ -1277,7 +1277,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var setheadingBlock = new ProtoBlock('setheading');
     setheadingBlock.palette = palettes.dict['turtle'];
     blocks.protoBlockDict['setheading'] = setheadingBlock;
-    setheadingBlock.staticLabels.push(_('set heading'));
+    setheadingBlock.staticLabels.push(_('fijar rumbo'));
     setheadingBlock.adjustWidthToLabel();
     setheadingBlock.oneArgBlock();
     setheadingBlock.defaults.push(0);
@@ -1285,7 +1285,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var setxyBlock = new ProtoBlock('setxy');
     setxyBlock.palette = palettes.dict['turtle'];
     blocks.protoBlockDict['setxy'] = setxyBlock;
-    setxyBlock.staticLabels.push(_('set xy'), _('x'), _('y'));
+    setxyBlock.staticLabels.push(_('fijar xy'), _('x'), _('y'));
     setxyBlock.adjustWidthToLabel();
     setxyBlock.twoArgBlock();
     setxyBlock.defaults.push(0);
@@ -1295,7 +1295,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var rightBlock = new ProtoBlock('right');
     rightBlock.palette = palettes.dict['turtle'];
     blocks.protoBlockDict['right'] = rightBlock;
-    rightBlock.staticLabels.push(_('right'));
+    rightBlock.staticLabels.push(_('derecha'));
     rightBlock.adjustWidthToLabel();
     rightBlock.oneArgBlock();
     rightBlock.defaults.push(90);
@@ -1303,7 +1303,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var leftBlock = new ProtoBlock('left');
     leftBlock.palette = palettes.dict['turtle'];
     blocks.protoBlockDict['left'] = leftBlock;
-    leftBlock.staticLabels.push(_('left'));
+    leftBlock.staticLabels.push(_('izquierda'));
     leftBlock.adjustWidthToLabel();
     leftBlock.oneArgBlock();
     leftBlock.defaults.push(90);
@@ -1311,7 +1311,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var backBlock = new ProtoBlock('back');
     backBlock.palette = palettes.dict['turtle'];
     blocks.protoBlockDict['back'] = backBlock;
-    backBlock.staticLabels.push(_('back'));
+    backBlock.staticLabels.push(_('atrás'));
     backBlock.adjustWidthToLabel();
     backBlock.oneArgBlock();
     backBlock.defaults.push(100);
@@ -1319,7 +1319,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var forwardBlock = new ProtoBlock('forward');
     forwardBlock.palette = palettes.dict['turtle'];
     blocks.protoBlockDict['forward'] = forwardBlock;
-    forwardBlock.staticLabels.push(_('forward'));
+    forwardBlock.staticLabels.push(_('adelante'));
     forwardBlock.adjustWidthToLabel();
     forwardBlock.oneArgBlock();
     forwardBlock.defaults.push(100);
@@ -1330,7 +1330,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     fillscreenBlock.palette = palettes.dict['pen'];
     blocks.protoBlockDict['fillscreen'] = fillscreenBlock;
     fillscreenBlock.hidden = true;
-    fillscreenBlock.staticLabels.push(_('background'));
+    fillscreenBlock.staticLabels.push(_('rellenar pantalla'));
     fillscreenBlock.adjustWidthToLabel();
     fillscreenBlock.threeArgBlock();
 
@@ -1344,28 +1344,28 @@ function initBasicProtoBlocks(palettes, blocks) {
     var shadeBlock = new ProtoBlock('shade');
     shadeBlock.palette = palettes.dict['pen'];
     blocks.protoBlockDict['shade'] = shadeBlock;
-    shadeBlock.staticLabels.push(_('shade'));
+    shadeBlock.staticLabels.push(_('sombra'));
     shadeBlock.adjustWidthToLabel();
     shadeBlock.parameterBlock();
 
     var chromaBlock = new ProtoBlock('grey');
     chromaBlock.palette = palettes.dict['pen'];
     blocks.protoBlockDict['grey'] = chromaBlock;
-    chromaBlock.staticLabels.push(_('grey'));
+    chromaBlock.staticLabels.push(_('gris'));
     chromaBlock.adjustWidthToLabel();
     chromaBlock.parameterBlock();
 
     var pensizeBlock = new ProtoBlock('pensize');
     pensizeBlock.palette = palettes.dict['pen'];
     blocks.protoBlockDict['pensize'] = pensizeBlock;
-    pensizeBlock.staticLabels.push(_('pen size'));
+    pensizeBlock.staticLabels.push(_('tamaño de la pluma'));
     pensizeBlock.adjustWidthToLabel();
     pensizeBlock.parameterBlock();
 
     var setfontBlock = new ProtoBlock('setfont');
     setfontBlock.palette = palettes.dict['pen'];
     blocks.protoBlockDict['setfont'] = setfontBlock;
-    setfontBlock.staticLabels.push(_('set font'));
+    setfontBlock.staticLabels.push(_('fijar font'));
     setfontBlock.adjustWidthToLabel();
     setfontBlock.oneArgBlock();
     setfontBlock.defaults.push(DEFAULTFONT);
@@ -1374,42 +1374,42 @@ function initBasicProtoBlocks(palettes, blocks) {
     var backgroundBlock = new ProtoBlock('background');
     backgroundBlock.palette = palettes.dict['pen'];
     blocks.protoBlockDict['background'] = backgroundBlock;
-    backgroundBlock.staticLabels.push(_('background'));
+    backgroundBlock.staticLabels.push(_('rellenar pantalla'));
     backgroundBlock.adjustWidthToLabel();
     backgroundBlock.zeroArgBlock();
 
     var hollowBlock = new ProtoBlock('hollowline');
     hollowBlock.palette = palettes.dict['pen'];
     blocks.protoBlockDict['hollowline'] = hollowBlock;
-    hollowBlock.staticLabels.push(_('hollow line'));
+    hollowBlock.staticLabels.push(_('linea sin relleno'));
     hollowBlock.adjustWidthToLabel();
     hollowBlock.flowClampZeroArgBlock();
 
     var fillBlock = new ProtoBlock('fill');
     fillBlock.palette = palettes.dict['pen'];
     blocks.protoBlockDict['fill'] = fillBlock;
-    fillBlock.staticLabels.push(_('fill'));
+    fillBlock.staticLabels.push(_('relleno'));
     fillBlock.adjustWidthToLabel();
     fillBlock.flowClampZeroArgBlock();
 
     var penupBlock = new ProtoBlock('penup');
     penupBlock.palette = palettes.dict['pen'];
     blocks.protoBlockDict['penup'] = penupBlock;
-    penupBlock.staticLabels.push(_('pen up'));
+    penupBlock.staticLabels.push(_('subir pluma'));
     penupBlock.adjustWidthToLabel();
     penupBlock.zeroArgBlock();
 
     var pendownBlock = new ProtoBlock('pendown');
     pendownBlock.palette = palettes.dict['pen'];
     blocks.protoBlockDict['pendown'] = pendownBlock;
-    pendownBlock.staticLabels.push(_('pen down'));
+    pendownBlock.staticLabels.push(_('bajar pluma'));
     pendownBlock.adjustWidthToLabel();
     pendownBlock.zeroArgBlock();
 
     var setpensizeBlock = new ProtoBlock('setpensize');
     setpensizeBlock.palette = palettes.dict['pen'];
     blocks.protoBlockDict['setpensize'] = setpensizeBlock;
-    setpensizeBlock.staticLabels.push(_('set pen size'));
+    setpensizeBlock.staticLabels.push(_('fijar pluma'));
     setpensizeBlock.adjustWidthToLabel();
     setpensizeBlock.oneArgBlock();
     setpensizeBlock.defaults.push(5);
@@ -1417,7 +1417,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var settranslucencyBlock = new ProtoBlock('settranslucency');
     settranslucencyBlock.palette = palettes.dict['pen'];
     blocks.protoBlockDict['settranslucency'] = settranslucencyBlock;
-    settranslucencyBlock.staticLabels.push(_('set translucency'));
+    settranslucencyBlock.staticLabels.push(_('fijar translucidez'));
     settranslucencyBlock.adjustWidthToLabel();
     settranslucencyBlock.oneArgBlock();
     settranslucencyBlock.defaults.push(50);
@@ -1425,7 +1425,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var sethueBlock = new ProtoBlock('sethue');
     sethueBlock.palette = palettes.dict['pen'];
     blocks.protoBlockDict['sethue'] = sethueBlock;
-    sethueBlock.staticLabels.push(_('set hue'));
+    sethueBlock.staticLabels.push(_('fijar matiz'));
     sethueBlock.adjustWidthToLabel();
     sethueBlock.oneArgBlock();
     sethueBlock.defaults.push(0);
@@ -1433,7 +1433,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var setshadeBlock = new ProtoBlock('setshade');
     setshadeBlock.palette = palettes.dict['pen'];
     blocks.protoBlockDict['setshade'] = setshadeBlock;
-    setshadeBlock.staticLabels.push(_('set shade'));
+    setshadeBlock.staticLabels.push(_('fijar sombra'));
     setshadeBlock.adjustWidthToLabel();
     setshadeBlock.oneArgBlock();
     setshadeBlock.defaults.push(50);
@@ -1441,7 +1441,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var setchromaBlock = new ProtoBlock('setgrey');
     setchromaBlock.palette = palettes.dict['pen'];
     blocks.protoBlockDict['setgrey'] = setchromaBlock;
-    setchromaBlock.staticLabels.push(_('set grey'));
+    setchromaBlock.staticLabels.push(_('fijar gris'));
     setchromaBlock.adjustWidthToLabel();
     setchromaBlock.oneArgBlock();
     setchromaBlock.defaults.push(100);
@@ -1449,7 +1449,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var setcolorBlock = new ProtoBlock('setcolor');
     setcolorBlock.palette = palettes.dict['pen'];
     blocks.protoBlockDict['setcolor'] = setcolorBlock;
-    setcolorBlock.staticLabels.push(_('set color'));
+    setcolorBlock.staticLabels.push(_('fijar color'));
     setcolorBlock.adjustWidthToLabel();
     setcolorBlock.oneArgBlock();
     setcolorBlock.defaults.push(0);
@@ -1495,27 +1495,27 @@ function initBasicProtoBlocks(palettes, blocks) {
     andBlock.palette = palettes.dict['boolean'];
     blocks.protoBlockDict['and'] = andBlock;
     andBlock.extraWidth = 10;
-    andBlock.staticLabels.push(_('and'));
+    andBlock.staticLabels.push(_('y'));
     andBlock.booleanTwoBooleanArgBlock();
 
     var orBlock = new ProtoBlock('or');
     orBlock.palette = palettes.dict['boolean'];
     blocks.protoBlockDict['or'] = orBlock;
     orBlock.extraWidth = 10;
-    orBlock.staticLabels.push(_('or'));
+    orBlock.staticLabels.push(_('o'));
     orBlock.booleanTwoBooleanArgBlock();
 
     var notBlock = new ProtoBlock('not');
     notBlock.palette = palettes.dict['boolean'];
     blocks.protoBlockDict['not'] = notBlock;
     notBlock.extraWidth = 30;
-    notBlock.staticLabels.push(_('not'));
+    notBlock.staticLabels.push(_('no'));
     notBlock.booleanOneBooleanArgBlock();
 
     var modBlock = new ProtoBlock('mod');
     modBlock.palette = palettes.dict['number'];
     blocks.protoBlockDict['mod'] = modBlock;
-    modBlock.staticLabels.push(_('mod'));
+    modBlock.staticLabels.push(_('módulo'));
     modBlock.adjustWidthToLabel();
     modBlock.twoArgMathBlock();
     modBlock.defaults.push(100, 10)
@@ -1523,7 +1523,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var sqrtBlock = new ProtoBlock('sqrt');
     sqrtBlock.palette = palettes.dict['number'];
     blocks.protoBlockDict['sqrt'] = sqrtBlock;
-    sqrtBlock.staticLabels.push(_('sqrt'));
+    sqrtBlock.staticLabels.push(_('raíz'));
     sqrtBlock.adjustWidthToLabel();
     sqrtBlock.oneArgMathBlock();
     sqrtBlock.defaults.push(100)
@@ -1573,7 +1573,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var oneOfBlock = new ProtoBlock('oneOf');
     oneOfBlock.palette = palettes.dict['number'];
     blocks.protoBlockDict['oneOf'] = oneOfBlock;
-    oneOfBlock.staticLabels.push(_('one of'), _('this'), _('that'));
+    oneOfBlock.staticLabels.push(_('uno de estos'), _('éste'), _('ése'));
     oneOfBlock.adjustWidthToLabel();
     oneOfBlock.twoArgMathBlock();
     oneOfBlock.dockTypes[0] = 'anyout';
@@ -1584,7 +1584,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var randomBlock = new ProtoBlock('random');
     randomBlock.palette = palettes.dict['number'];
     blocks.protoBlockDict['random'] = randomBlock;
-    randomBlock.staticLabels.push(_('random'), _('min'), _('max'));
+    randomBlock.staticLabels.push(_('aleatorio'), _('min'), _('max'));
     randomBlock.adjustWidthToLabel();
     randomBlock.twoArgMathBlock();
     randomBlock.defaults.push(0, 100);
@@ -1599,14 +1599,14 @@ function initBasicProtoBlocks(palettes, blocks) {
     var incrementOneBlock = new ProtoBlock('incrementOne');
     incrementOneBlock.palette = palettes.dict['boxes'];
     blocks.protoBlockDict['incrementOne'] = incrementOneBlock;
-    incrementOneBlock.staticLabels.push(_('add 1 to'));
+    incrementOneBlock.staticLabels.push(_('sumar 1 a'));
     incrementOneBlock.adjustWidthToLabel();
     incrementOneBlock.oneArgBlock();
 
     var incrementBlock = new ProtoBlock('increment');
     incrementBlock.palette = palettes.dict['boxes'];
     blocks.protoBlockDict['increment'] = incrementBlock;
-    incrementBlock.staticLabels.push(_('add'), _('to'), _('value'));
+    incrementBlock.staticLabels.push(_('sumar'), _('para'), _('valor'));
     incrementBlock.adjustWidthToLabel();
     incrementBlock.twoArgBlock();
     incrementBlock.dockTypes[1] = 'anyin';
@@ -1615,11 +1615,11 @@ function initBasicProtoBlocks(palettes, blocks) {
     var boxBlock = new ProtoBlock('box');
     boxBlock.palette = palettes.dict['boxes'];
     blocks.protoBlockDict['box'] = boxBlock;
-    boxBlock.staticLabels.push(_('box'));
+    boxBlock.staticLabels.push(_('caja'));
     boxBlock.extraWidth = 10;
     boxBlock.adjustWidthToLabel();
     boxBlock.oneArgMathBlock();
-    boxBlock.defaults.push(_('box'));
+    boxBlock.defaults.push(_('caja'));
     boxBlock.dockTypes[0] = 'anyout';
     // Show the value in the box as if it were a parameter.
     boxBlock.parameter = true;
@@ -1628,10 +1628,10 @@ function initBasicProtoBlocks(palettes, blocks) {
     var storeinBlock = new ProtoBlock('storein');
     storeinBlock.palette = palettes.dict['boxes'];
     blocks.protoBlockDict['storein'] = storeinBlock;
-    storeinBlock.staticLabels.push(_('store in'), _('name'), _('value'));
+    storeinBlock.staticLabels.push(_('guardar en'), _('nombre'), _('valor'));
     storeinBlock.adjustWidthToLabel();
     storeinBlock.twoArgBlock();
-    storeinBlock.defaults.push(_('box'));
+    storeinBlock.defaults.push(_('caja'));
     storeinBlock.defaults.push(100);
     storeinBlock.dockTypes[1] = 'anyin';
     storeinBlock.dockTypes[2] = 'anyin';
@@ -1639,7 +1639,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var namedBoxBlock = new ProtoBlock('namedbox');
     namedBoxBlock.palette = palettes.dict['boxes'];
     blocks.protoBlockDict['namedbox'] = namedBoxBlock;
-    namedBoxBlock.staticLabels.push(_('box'));
+    namedBoxBlock.staticLabels.push(_('caja'));
     namedBoxBlock.extraWidth = 10;
     namedBoxBlock.adjustWidthToLabel();
     namedBoxBlock.parameterBlock();
@@ -1650,16 +1650,16 @@ function initBasicProtoBlocks(palettes, blocks) {
     var doBlock = new ProtoBlock('do');
     doBlock.palette = palettes.dict['action'];
     blocks.protoBlockDict['do'] = doBlock;
-    doBlock.staticLabels.push(_('do'));
+    doBlock.staticLabels.push(_('hacer'));
     doBlock.adjustWidthToLabel();
     doBlock.oneArgBlock();
-    doBlock.defaults.push(_('action'));
+    doBlock.defaults.push(_('acción'));
     doBlock.dockTypes[1] = 'anyin';
 
     var returnBlock = new ProtoBlock('return');
     returnBlock.palette = palettes.dict['action'];
     blocks.protoBlockDict['return'] = returnBlock;
-    returnBlock.staticLabels.push(_('return'));
+    returnBlock.staticLabels.push(_('retorno'));
     returnBlock.extraWidth = 10;
     returnBlock.adjustWidthToLabel();
     returnBlock.oneArgBlock();
@@ -1669,7 +1669,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var returnToUrlBlock = new ProtoBlock('returnToUrl');
     returnToUrlBlock.palette = palettes.dict['action'];
     blocks.protoBlockDict['returnToUrl'] = returnToUrlBlock;
-    returnToUrlBlock.staticLabels.push(_('return to URL'));
+    returnToUrlBlock.staticLabels.push(_('retorno a URL'));
     returnToUrlBlock.extraWidth = 10;
     returnToUrlBlock.adjustWidthToLabel();
     returnToUrlBlock.oneArgBlock();
@@ -1679,17 +1679,17 @@ function initBasicProtoBlocks(palettes, blocks) {
     var calcBlock = new ProtoBlock('calc');
     calcBlock.palette = palettes.dict['action'];
     blocks.protoBlockDict['calc'] = calcBlock;
-    calcBlock.staticLabels.push(_('calculate'));
+    calcBlock.staticLabels.push(_('calcular'));
     calcBlock.adjustWidthToLabel();
     calcBlock.oneArgMathBlock();
-    calcBlock.defaults.push(_('action'));
+    calcBlock.defaults.push(_('acción'));
     calcBlock.dockTypes[0] = 'anyout';
     calcBlock.dockTypes[1] = 'anyin';
 
     var namedCalcBlock = new ProtoBlock('namedcalc');
     namedCalcBlock.palette = palettes.dict['action'];
     blocks.protoBlockDict['namedcalc'] = namedCalcBlock;
-    namedCalcBlock.staticLabels.push(_('action'));
+    namedCalcBlock.staticLabels.push(_('acción'));
     namedCalcBlock.extraWidth = 10;
     namedCalcBlock.adjustWidthToLabel();
     namedCalcBlock.parameterBlock();
@@ -1697,7 +1697,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var namedDoArgBlock = new ProtoBlock('nameddoArg');
     namedDoArgBlock.palette = palettes.dict['action'];
     blocks.protoBlockDict['nameddoArg'] = namedDoArgBlock;
-    namedDoArgBlock.staticLabels.push(_('do'));
+    namedDoArgBlock.staticLabels.push(_('hacer'));
     namedDoArgBlock.adjustWidthToLabel();
     namedDoArgBlock.argClampBlock();
     namedDoArgBlock.dockTypes[1] = 'anyin';
@@ -1705,7 +1705,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var namedCalcArgBlock = new ProtoBlock('namedcalcArg');
     namedCalcArgBlock.palette = palettes.dict['action'];
     blocks.protoBlockDict['namedcalcArg'] = namedCalcArgBlock;
-    namedCalcArgBlock.staticLabels.push(_('calculate'));
+    namedCalcArgBlock.staticLabels.push(_('calcular'));
     namedCalcArgBlock.adjustWidthToLabel();
     namedCalcArgBlock.argClampMathBlock();
     namedCalcArgBlock.dockTypes[0] = 'anyout';
@@ -1714,20 +1714,20 @@ function initBasicProtoBlocks(palettes, blocks) {
     var doArgBlock = new ProtoBlock('doArg');
     doArgBlock.palette = palettes.dict['action'];
     blocks.protoBlockDict['doArg'] = doArgBlock;
-    doArgBlock.staticLabels.push(_('do'));
+    doArgBlock.staticLabels.push(_('hacer'));
     doArgBlock.adjustWidthToLabel();
     doArgBlock.argClampOneArgBlock();
-    doArgBlock.defaults.push(_('action'));
+    doArgBlock.defaults.push(_('acción'));
     doArgBlock.dockTypes[1] = 'anyin';
     doArgBlock.dockTypes[2] = 'anyin';
 
     var calcArgBlock = new ProtoBlock('calcArg');
     calcArgBlock.palette = palettes.dict['action'];
     blocks.protoBlockDict['calcArg'] = calcArgBlock;
-    calcArgBlock.staticLabels.push(_('calculate'));
+    calcArgBlock.staticLabels.push(_('calcular'));
     calcArgBlock.adjustWidthToLabel();
     calcArgBlock.argClampOneArgMathBlock();
-    calcArgBlock.defaults.push(_('action'));
+    calcArgBlock.defaults.push(_('acción'));
     calcArgBlock.dockTypes[0] = 'anyout';
     calcArgBlock.dockTypes[1] = 'anyin';
     calcArgBlock.dockTypes[2] = 'anyin';
@@ -1752,27 +1752,27 @@ function initBasicProtoBlocks(palettes, blocks) {
     var listenBlock = new ProtoBlock('listen');
     listenBlock.palette = palettes.dict['action'];
     blocks.protoBlockDict['listen'] = listenBlock;
-    listenBlock.staticLabels.push(_('on'), _('event'), _('do'));
+    listenBlock.staticLabels.push(_('cuando'), _('señal'), _('hacer'));
     listenBlock.adjustWidthToLabel();
     listenBlock.twoArgBlock();
-    listenBlock.defaults.push(_('event'));
-    listenBlock.defaults.push(_('action'));
+    listenBlock.defaults.push(_('señal'));
+    listenBlock.defaults.push(_('acción'));
     listenBlock.dockTypes[1] = 'textin';
     listenBlock.dockTypes[2] = 'textin';
 
     var dispatchBlock = new ProtoBlock('dispatch');
     dispatchBlock.palette = palettes.dict['action'];
     blocks.protoBlockDict['dispatch'] = dispatchBlock;
-    dispatchBlock.staticLabels.push(_('broadcast'));
+    dispatchBlock.staticLabels.push(_('emitir'));
     dispatchBlock.adjustWidthToLabel();
     dispatchBlock.oneArgBlock();
-    dispatchBlock.defaults.push(_('event'));
+    dispatchBlock.defaults.push(_('señal'));
     dispatchBlock.dockTypes[1] = 'textin';
 
     var drumBlock = new ProtoBlock('drum');
     drumBlock.palette = palettes.dict['action'];
     blocks.protoBlockDict['drum'] = drumBlock;
-    drumBlock.staticLabels.push(_('start drum'));
+    drumBlock.staticLabels.push(_('iniciar tambor'));
     drumBlock.extraWidth = 10;
     drumBlock.adjustWidthToLabel();
     drumBlock.stackClampZeroArgBlock();
@@ -1780,7 +1780,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var startBlock = new ProtoBlock('start');
     startBlock.palette = palettes.dict['action'];
     blocks.protoBlockDict['start'] = startBlock;
-    startBlock.staticLabels.push(_('start'));
+    startBlock.staticLabels.push(_('iniciar'));
     startBlock.extraWidth = 10;
     startBlock.adjustWidthToLabel();
     startBlock.stackClampZeroArgBlock();
@@ -1788,17 +1788,17 @@ function initBasicProtoBlocks(palettes, blocks) {
     var actionBlock = new ProtoBlock('action');
     actionBlock.palette = palettes.dict['action'];
     blocks.protoBlockDict['action'] = actionBlock;
-    actionBlock.staticLabels.push(_('action'));
+    actionBlock.staticLabels.push(_('acción'));
     actionBlock.extraWidth = 25;
     actionBlock.adjustWidthToLabel();
     actionBlock.stackClampOneArgBlock();
-    actionBlock.defaults.push(_('action'));
+    actionBlock.defaults.push(_('acción'));
 
     var namedDoBlock = new ProtoBlock('nameddo');
     namedDoBlock.palette = palettes.dict['action'];
     blocks.protoBlockDict['nameddo'] = namedDoBlock;
     namedDoBlock.hidden = true;
-    namedDoBlock.staticLabels.push(_('action'));
+    namedDoBlock.staticLabels.push(_('acción'));
     namedDoBlock.extraWidth = 10;
     namedDoBlock.adjustWidthToLabel();
     namedDoBlock.zeroArgBlock();
@@ -1808,7 +1808,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var loadHeapFromApp = new ProtoBlock('loadHeapFromApp');
     loadHeapFromApp.palette = palettes.dict['heap'];
     blocks.protoBlockDict['loadHeapFromApp'] = loadHeapFromApp;
-    loadHeapFromApp.staticLabels.push(_('load heap from App'));
+    loadHeapFromApp.staticLabels.push(_('cargar pila desde aplicación'));
     loadHeapFromApp.adjustWidthToLabel();
     loadHeapFromApp.twoArgBlock();
     loadHeapFromApp.dockTypes[1] = 'textin';
@@ -1819,7 +1819,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var saveHeapToApp = new ProtoBlock('saveHeapToApp');
     saveHeapToApp.palette = palettes.dict['heap'];
     blocks.protoBlockDict['saveHeapToApp'] = saveHeapToApp;
-    saveHeapToApp.staticLabels.push(_('save heap to App'));
+    saveHeapToApp.staticLabels.push(_('guardar pila a aplicación'));
     saveHeapToApp.adjustWidthToLabel();
     saveHeapToApp.twoArgBlock();
     saveHeapToApp.dockTypes[1] = 'textin';
@@ -1830,7 +1830,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var setHeapEntry = new ProtoBlock('setHeapEntry');
     setHeapEntry.palette = palettes.dict['heap'];
     blocks.protoBlockDict['setHeapEntry'] = setHeapEntry;
-    setHeapEntry.staticLabels.push(_('set heap'), _('index'), _('value'));
+    setHeapEntry.staticLabels.push(_('modificar valor en pila'), _('posición en la pila'), _('valor'));
     setHeapEntry.adjustWidthToLabel();
     setHeapEntry.twoArgBlock();
     setHeapEntry.dockTypes[1] = 'numberin';
@@ -1841,14 +1841,14 @@ function initBasicProtoBlocks(palettes, blocks) {
     var showHeap = new ProtoBlock('showHeap');
     showHeap.palette = palettes.dict['heap'];
     blocks.protoBlockDict['showHeap'] = showHeap;
-    showHeap.staticLabels.push(_('show heap'));
+    showHeap.staticLabels.push(_('mostrar pila'));
     showHeap.adjustWidthToLabel();
     showHeap.zeroArgBlock();
 
     var heapLength = new ProtoBlock('heapLength');
     heapLength.palette = palettes.dict['heap'];
     blocks.protoBlockDict['heapLength'] = heapLength;
-    heapLength.staticLabels.push(_('heap length'));
+    heapLength.staticLabels.push(_('tamaño de la pila'));
     heapLength.adjustWidthToLabel();
     heapLength.parameterBlock();
     heapLength.dockTypes[0] = 'numberout';
@@ -1856,21 +1856,21 @@ function initBasicProtoBlocks(palettes, blocks) {
     var heapEmpty = new ProtoBlock('heapEmpty');
     heapEmpty.palette = palettes.dict['heap'];
     blocks.protoBlockDict['heapEmpty'] = heapEmpty;
-    heapEmpty.staticLabels.push(_('heap empty?'));
+    heapEmpty.staticLabels.push(_('¿pila vacía?'));
     heapEmpty.adjustWidthToLabel();
     heapEmpty.booleanZeroArgBlock();
 
     var emptyHeap = new ProtoBlock('emptyHeap');
     emptyHeap.palette = palettes.dict['heap'];
     blocks.protoBlockDict['emptyHeap'] = emptyHeap;
-    emptyHeap.staticLabels.push(_('empty heap'));
+    emptyHeap.staticLabels.push(_('vaciar pila'));
     emptyHeap.adjustWidthToLabel();
     emptyHeap.zeroArgBlock();
 
     var saveHeap = new ProtoBlock('saveHeap');
     saveHeap.palette = palettes.dict['heap'];
     blocks.protoBlockDict['saveHeap'] = saveHeap;
-    saveHeap.staticLabels.push(_('save heap'));
+    saveHeap.staticLabels.push(_('guardar pila'));
     saveHeap.adjustWidthToLabel();
     saveHeap.oneArgBlock();
     saveHeap.defaults.push('heap.json');
@@ -1879,7 +1879,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var loadHeap = new ProtoBlock('loadHeap');
     loadHeap.palette = palettes.dict['heap'];
     blocks.protoBlockDict['loadHeap'] = loadHeap;
-    loadHeap.staticLabels.push(_('load heap'));
+    loadHeap.staticLabels.push(_('cargar pila'));
     loadHeap.adjustWidthToLabel();
     loadHeap.oneArgBlock();
     loadHeap.dockTypes[1] = 'filein';
@@ -1888,7 +1888,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var indexHeap = new ProtoBlock('indexHeap');
     indexHeap.palette = palettes.dict['heap'];
     blocks.protoBlockDict['indexHeap'] = indexHeap;
-    indexHeap.staticLabels.push(_('index heap'));
+    indexHeap.staticLabels.push(_('valor en la pila'));
     indexHeap.adjustWidthToLabel();
     indexHeap.oneArgMathBlock();
     indexHeap.dockTypes[1] = 'numberin';
@@ -1897,7 +1897,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var pushBlk = new ProtoBlock('push');
     pushBlk.palette = palettes.dict['heap'];
     blocks.protoBlockDict['push'] = pushBlk;
-    pushBlk.staticLabels.push(_('push'));
+    pushBlk.staticLabels.push(_('apilar'));
     pushBlk.adjustWidthToLabel();
     pushBlk.oneArgBlock();
     pushBlk.dockTypes[1] = 'anyin';
@@ -1905,7 +1905,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var popBlk = new ProtoBlock('pop');
     popBlk.palette = palettes.dict['heap'];
     blocks.protoBlockDict['pop'] = popBlk;
-    popBlk.staticLabels.push(_('pop'));
+    popBlk.staticLabels.push(_('sacar'));
     popBlk.adjustWidthToLabel();
     popBlk.parameterBlock();
 
@@ -1914,7 +1914,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var speakBlock = new ProtoBlock('speak');
     speakBlock.palette = palettes.dict['media'];
     blocks.protoBlockDict['speak'] = speakBlock;
-    speakBlock.staticLabels.push(_('speak'));
+    speakBlock.staticLabels.push(_('hablar'));
     speakBlock.adjustWidthToLabel();
     speakBlock.oneArgBlock();
     speakBlock.defaults.push('hello');
@@ -1942,14 +1942,14 @@ function initBasicProtoBlocks(palettes, blocks) {
     var stopVideoCamBlock = new ProtoBlock('stopvideocam');
     stopVideoCamBlock.palette = palettes.dict['media'];
     blocks.protoBlockDict['stopvideocam'] = stopVideoCamBlock;
-    stopVideoCamBlock.staticLabels.push(_('stop media'));
+    stopVideoCamBlock.staticLabels.push(_('detener medios'));
     stopVideoCamBlock.adjustWidthToLabel();
     stopVideoCamBlock.zeroArgBlock();
 
     var toneBlock = new ProtoBlock('tone');
     toneBlock.palette = palettes.dict['media'];
     blocks.protoBlockDict['tone'] = toneBlock;
-    toneBlock.staticLabels.push(_('tone'),  _('frequency'), _('duration (ms)'));
+    toneBlock.staticLabels.push(_('tono'),  _('frecuencia'), _('duración (ms)'));
     toneBlock.adjustWidthToLabel();
     toneBlock.defaults.push(440, 200);
     toneBlock.twoArgBlock();
@@ -1959,7 +1959,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var toFrequencyBlock = new ProtoBlock('tofrequency');
     toFrequencyBlock.palette = palettes.dict['media'];
     blocks.protoBlockDict['tofrequency'] = toFrequencyBlock;
-    toFrequencyBlock.staticLabels.push(_('note to frequency'), _('note'), _('octave'));
+    toFrequencyBlock.staticLabels.push(_('nota a frecuencia'), _('nota'), _('octava'));
     toFrequencyBlock.adjustWidthToLabel();
     toFrequencyBlock.defaults.push('A');
     toFrequencyBlock.defaults.push('4');
@@ -1970,7 +1970,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var shellBlock = new ProtoBlock('turtleshell');
     shellBlock.palette = palettes.dict['media'];
     blocks.protoBlockDict['turtleshell'] = shellBlock;
-    shellBlock.staticLabels.push(_('shell'), _('size'), _('image'));
+    shellBlock.staticLabels.push(_('caparazón'), _('tamaño'), _('imagen'));
     shellBlock.adjustWidthToLabel();
     shellBlock.twoArgBlock();
     shellBlock.defaults.push(55);
@@ -1981,11 +1981,11 @@ function initBasicProtoBlocks(palettes, blocks) {
     var showBlock = new ProtoBlock('show');
     showBlock.palette = palettes.dict['media'];
     blocks.protoBlockDict['show'] = showBlock;
-    showBlock.staticLabels.push(_('show'), _('size'), _('obj'));
+    showBlock.staticLabels.push(_('mostrar'), _('tamaño'), _('objeto'));
     showBlock.adjustWidthToLabel();
     showBlock.twoArgBlock();
     showBlock.defaults.push(24);
-    showBlock.defaults.push(_('text'));
+    showBlock.defaults.push(_('texto'));
     showBlock.dockTypes[1] = 'numberin';
     showBlock.dockTypes[2] = 'anyin';
 
@@ -2025,56 +2025,56 @@ function initBasicProtoBlocks(palettes, blocks) {
     var breakBlock = new ProtoBlock('break');
     breakBlock.palette = palettes.dict['flow'];
     blocks.protoBlockDict['break'] = breakBlock;
-    breakBlock.staticLabels.push(_('stop'));
+    breakBlock.staticLabels.push(_('detener'));
     breakBlock.adjustWidthToLabel();
     breakBlock.basicBlockNoFlow();
 
     var waitForBlock = new ProtoBlock('waitFor');
     waitForBlock.palette = palettes.dict['flow'];
     blocks.protoBlockDict['waitFor'] = waitForBlock;
-    waitForBlock.staticLabels.push(_('wait for'));
+    waitForBlock.staticLabels.push(_('esperar hasta'));
     waitForBlock.adjustWidthToLabel();
     waitForBlock.oneBooleanArgBlock();
 
     var untilBlock = new ProtoBlock('until');
     untilBlock.palette = palettes.dict['flow'];
     blocks.protoBlockDict['until'] = untilBlock;
-    untilBlock.staticLabels.push(_('until'), _('do'));
+    untilBlock.staticLabels.push(_('hasta'), _('hacer'));
     untilBlock.adjustWidthToLabel();
     untilBlock.flowClampBooleanArgBlock();
 
     var whileBlock = new ProtoBlock('while');
     whileBlock.palette = palettes.dict['flow'];
     blocks.protoBlockDict['while'] = whileBlock;
-    whileBlock.staticLabels.push(_('while'), _('do'));
+    whileBlock.staticLabels.push(_('mientras'), _('hacer'));
     whileBlock.adjustWidthToLabel();
     whileBlock.flowClampBooleanArgBlock();
 
     var ifthenelseBlock = new ProtoBlock('ifthenelse');
     ifthenelseBlock.palette = palettes.dict['flow'];
     blocks.protoBlockDict['ifthenelse'] = ifthenelseBlock;
-    ifthenelseBlock.staticLabels.push(_('if'), _('then'), _('else'));
+    ifthenelseBlock.staticLabels.push(_('si'), _('entonces'), _('sino'));
     ifthenelseBlock.adjustWidthToLabel();
     ifthenelseBlock.doubleFlowClampBooleanArgBlock();
 
     var ifBlock = new ProtoBlock('if');
     ifBlock.palette = palettes.dict['flow'];
     blocks.protoBlockDict['if'] = ifBlock;
-    ifBlock.staticLabels.push(_('if'), _('then'));
+    ifBlock.staticLabels.push(_('si'), _('entonces'));
     ifBlock.adjustWidthToLabel();
     ifBlock.flowClampBooleanArgBlock();
 
     var foreverBlock = new ProtoBlock('forever');
     foreverBlock.palette = palettes.dict['flow'];
     blocks.protoBlockDict['forever'] = foreverBlock;
-    foreverBlock.staticLabels.push(_('forever'));
+    foreverBlock.staticLabels.push(_('por siempre'));
     foreverBlock.adjustWidthToLabel();
     foreverBlock.flowClampZeroArgBlock();
 
     var repeatBlock = new ProtoBlock('repeat');
     repeatBlock.palette = palettes.dict['flow'];
     blocks.protoBlockDict['repeat'] = repeatBlock;
-    repeatBlock.staticLabels.push(_('repeat'));
+    repeatBlock.staticLabels.push(_('repetir'));
     repeatBlock.adjustWidthToLabel();
     repeatBlock.flowClampOneArgBlock();
     repeatBlock.defaults.push(4);
@@ -2086,7 +2086,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     blocks.protoBlockDict['nopValueBlock'] = nopValueBlock;
     nopValueBlock.hidden = true;
     nopValueBlock.palette = palettes.dict['extras'];
-    nopValueBlock.staticLabels.push(_('unknown'));
+    nopValueBlock.staticLabels.push(_('desconocido'));
     nopValueBlock.adjustWidthToLabel();
     nopValueBlock.valueBlock();
     nopValueBlock.dockTypes[0] = 'anyout';
@@ -2097,7 +2097,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     nopOneArgMathBlock.hidden = true;
     nopOneArgMathBlock.palette = palettes.dict['extras'];
     nopOneArgMathBlock.oneArgMathBlock();
-    nopOneArgMathBlock.staticLabels.push(_('unknown'));
+    nopOneArgMathBlock.staticLabels.push(_('desconocido'));
     nopOneArgMathBlock.dockTypes[0] = 'anyout';
     nopOneArgMathBlock.dockTypes[1] = 'anyin';
 
@@ -2106,7 +2106,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     nopTwoArgMathBlock.twoArgMathBlock();
     nopTwoArgMathBlock.hidden = true;
     nopTwoArgMathBlock.palette = palettes.dict['extras'];
-    nopTwoArgMathBlock.staticLabels.push(_('unknown'));
+    nopTwoArgMathBlock.staticLabels.push(_('desconocido'));
     nopTwoArgMathBlock.dockTypes[0] = 'anyout';
     nopTwoArgMathBlock.dockTypes[1] = 'anyin';
     nopTwoArgMathBlock.dockTypes[2] = 'anyin';
@@ -2116,7 +2116,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     blocks.protoBlockDict['nopZeroArgBlock'] = nopZeroArgBlock;
     nopZeroArgBlock.hidden = true;
     nopZeroArgBlock.palette = palettes.dict['extras'];
-    nopZeroArgBlock.staticLabels.push(_('unknown'));
+    nopZeroArgBlock.staticLabels.push(_('desconocido'));
     nopZeroArgBlock.adjustWidthToLabel();
     nopZeroArgBlock.zeroArgBlock();
 
@@ -2124,7 +2124,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     blocks.protoBlockDict['nopOneArgBlock'] = nopOneArgBlock;
     nopOneArgBlock.hidden = true;
     nopOneArgBlock.palette = palettes.dict['extras'];
-    nopOneArgBlock.staticLabels.push(_('unknown'));
+    nopOneArgBlock.staticLabels.push(_('desconocido'));
     nopOneArgBlock.adjustWidthToLabel();
     nopOneArgBlock.oneArgBlock();
     nopOneArgBlock.dockTypes[1] = 'anyin';
@@ -2133,7 +2133,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     blocks.protoBlockDict['nopTwoArgBlock'] = nopTwoArgBlock;
     nopTwoArgBlock.hidden = true;
     nopTwoArgBlock.palette = palettes.dict['extras'];
-    nopTwoArgBlock.staticLabels.push(_('unknown'));
+    nopTwoArgBlock.staticLabels.push(_('desconocido'));
     nopTwoArgBlock.adjustWidthToLabel();
     nopTwoArgBlock.twoArgBlock();
     nopTwoArgBlock.dockTypes[1] = 'anyin';
@@ -2143,7 +2143,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     blocks.protoBlockDict['nopThreeArgBlock'] = nopThreeArgBlock;
     nopThreeArgBlock.hidden = true;
     nopThreeArgBlock.palette = palettes.dict['extras'];
-    nopThreeArgBlock.staticLabels.push(_('unknown'));
+    nopThreeArgBlock.staticLabels.push(_('desconocido'));
     nopThreeArgBlock.adjustWidthToLabel();
     nopThreeArgBlock.threeArgBlock();
     nopThreeArgBlock.dockTypes[1] = 'anyin';
@@ -2154,7 +2154,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     audioBlock.palette = palettes.dict['extras'];
     blocks.protoBlockDict['playback'] = audioBlock;
     audioBlock.defaults.push(null);
-    audioBlock.staticLabels.push(_('play back'));
+    audioBlock.staticLabels.push(_('reproducir'));
     audioBlock.adjustWidthToLabel();
     audioBlock.oneArgBlock();
     audioBlock.dockTypes[1] = 'mediain';
@@ -2162,32 +2162,32 @@ function initBasicProtoBlocks(palettes, blocks) {
     var audioStopBlock = new ProtoBlock('stopplayback');
     audioStopBlock.palette = palettes.dict['extras'];
     blocks.protoBlockDict['stopplayback'] = audioStopBlock;
-    audioStopBlock.staticLabels.push(_('stop play'));
+    audioStopBlock.staticLabels.push(_('detener'));
     audioStopBlock.adjustWidthToLabel();
     audioStopBlock.zeroArgBlock();
 
     var lilypondBlock = new ProtoBlock('savelilypond');
     lilypondBlock.palette = palettes.dict['extras'];
     blocks.protoBlockDict['savelilypond'] = lilypondBlock;
-    lilypondBlock.staticLabels.push(_('save as lilypond'));
+    lilypondBlock.staticLabels.push(_('guardar como lilypond'));
     lilypondBlock.adjustWidthToLabel();
     lilypondBlock.oneArgBlock();
-    lilypondBlock.defaults.push(_('title') + '.ly');
+    lilypondBlock.defaults.push(_('título') + '.ly');
     lilypondBlock.dockTypes[1] = 'textin';
 
     var svgBlock = new ProtoBlock('savesvg');
     svgBlock.palette = palettes.dict['extras'];
     blocks.protoBlockDict['savesvg'] = svgBlock;
-    svgBlock.staticLabels.push(_('save svg'));
+    svgBlock.staticLabels.push(_('guardar como SVG'));
     svgBlock.adjustWidthToLabel();
     svgBlock.oneArgBlock();
-    svgBlock.defaults.push(_('title') + '.svg');
+    svgBlock.defaults.push(_('título') + '.svg');
     svgBlock.dockTypes[1] = 'textin';
 
     var getyTurtleBlock = new ProtoBlock('yturtle');
     getyTurtleBlock.palette = palettes.dict['extras'];
     blocks.protoBlockDict['yturtle'] = getyTurtleBlock;
-    getyTurtleBlock.staticLabels.push(_('turtle y'));
+    getyTurtleBlock.staticLabels.push(_('tortuga y'));
     getyTurtleBlock.adjustWidthToLabel();
     getyTurtleBlock.oneArgMathBlock();
     getyTurtleBlock.dockTypes[1] = 'anyin';
@@ -2196,7 +2196,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var getxTurtleBlock = new ProtoBlock('xturtle');
     getxTurtleBlock.palette = palettes.dict['extras'];
     blocks.protoBlockDict['xturtle'] = getxTurtleBlock;
-    getxTurtleBlock.staticLabels.push(_('turtle x'));
+    getxTurtleBlock.staticLabels.push(_('tortuga x'));
     getxTurtleBlock.adjustWidthToLabel();
     getxTurtleBlock.oneArgMathBlock();
     getxTurtleBlock.dockTypes[1] = 'anyin';
@@ -2205,7 +2205,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var startTurtleBlock = new ProtoBlock('startTurtle');
     startTurtleBlock.palette = palettes.dict['extras'];
     blocks.protoBlockDict['startTurtle'] = startTurtleBlock;
-    startTurtleBlock.staticLabels.push(_('start turtle'));
+    startTurtleBlock.staticLabels.push(_('iniciar tortuga'));
     startTurtleBlock.adjustWidthToLabel();
     startTurtleBlock.oneArgBlock();
     startTurtleBlock.dockTypes[1] = 'anyin';
@@ -2214,7 +2214,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var stopTurtleBlock = new ProtoBlock('stopTurtle');
     stopTurtleBlock.palette = palettes.dict['extras'];
     blocks.protoBlockDict['stopTurtle'] = stopTurtleBlock;
-    stopTurtleBlock.staticLabels.push(_('stop turtle'));
+    stopTurtleBlock.staticLabels.push(_('detener tortuga'));
     stopTurtleBlock.adjustWidthToLabel();
     stopTurtleBlock.oneArgBlock();
     stopTurtleBlock.dockTypes[1] = 'anyin';
@@ -2223,28 +2223,28 @@ function initBasicProtoBlocks(palettes, blocks) {
     var noBackgroundBlock = new ProtoBlock('nobackground');
     blocks.protoBlockDict['nobackground'] = noBackgroundBlock;
     noBackgroundBlock.palette = palettes.dict['extras'];
-    noBackgroundBlock.staticLabels.push(_('no background'));
+    noBackgroundBlock.staticLabels.push(_('sin fondo'));
     noBackgroundBlock.adjustWidthToLabel();
     noBackgroundBlock.zeroArgBlock();
 
     var showBlocks = new ProtoBlock('showblocks');
     showBlocks.palette = palettes.dict['extras'];
     blocks.protoBlockDict['showblocks'] = showBlocks;
-    showBlocks.staticLabels.push(_('show blocks'));
+    showBlocks.staticLabels.push(_('mostrar bloques'));
     showBlocks.adjustWidthToLabel();
     showBlocks.zeroArgBlock();
 
     var hideBlocks = new ProtoBlock('hideblocks');
     hideBlocks.palette = palettes.dict['extras'];
     blocks.protoBlockDict['hideblocks'] = hideBlocks;
-    hideBlocks.staticLabels.push(_('hide blocks'));
+    hideBlocks.staticLabels.push(_('ocultar bloques'));
     hideBlocks.adjustWidthToLabel();
     hideBlocks.zeroArgBlock();
 
     var openProjectBlock = new ProtoBlock('openProject');
     openProjectBlock.palette = palettes.dict['extras'];
     blocks.protoBlockDict['openProject'] = openProjectBlock;
-    openProjectBlock.staticLabels.push(_('open project'));
+    openProjectBlock.staticLabels.push(_('abierto proyecto'));
     openProjectBlock.adjustWidthToLabel();
     openProjectBlock.oneArgBlock();
     openProjectBlock.defaults.push('url');
@@ -2268,7 +2268,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var waitBlock = new ProtoBlock('wait');
     waitBlock.palette = palettes.dict['extras'];
     blocks.protoBlockDict['wait'] = waitBlock;
-    waitBlock.staticLabels.push(_('wait'));
+    waitBlock.staticLabels.push(_('esperar'));
     waitBlock.adjustWidthToLabel();
     waitBlock.oneArgBlock();
     waitBlock.defaults.push(1);
@@ -2276,7 +2276,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var printBlock = new ProtoBlock('print');
     printBlock.palette = palettes.dict['extras'];
     blocks.protoBlockDict['print'] = printBlock;
-    printBlock.staticLabels.push(_('print'));
+    printBlock.staticLabels.push(_('imprimir'));
     printBlock.adjustWidthToLabel();
     printBlock.oneArgBlock();
     printBlock.dockTypes[1] = 'anyin';
@@ -2284,7 +2284,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var turtleNameBlock = new ProtoBlock('turtlename');
     turtleNameBlock.palette = palettes.dict['extras'];
     blocks.protoBlockDict['turtlename'] = turtleNameBlock;
-    turtleNameBlock.staticLabels.push(_('turtle name'));
+    turtleNameBlock.staticLabels.push(_('renombrar tortuga'));
     turtleNameBlock.adjustWidthToLabel();
     turtleNameBlock.parameterBlock();
     turtleNameBlock.dockTypes[0] = 'textout';
@@ -2292,9 +2292,9 @@ function initBasicProtoBlocks(palettes, blocks) {
     var setTurtleName = new ProtoBlock('setturtlename');
     setTurtleName.palette = palettes.dict['extras'];
     blocks.protoBlockDict['setturtlename'] = setTurtleName;
-    setTurtleName.staticLabels.push(_('turtle name'));
-    setTurtleName.staticLabels.push(_('source'));
-    setTurtleName.staticLabels.push(_('target'));
+    setTurtleName.staticLabels.push(_('renombrar tortuga'));
+    setTurtleName.staticLabels.push(_('origen'));
+    setTurtleName.staticLabels.push(_('destino'));
     setTurtleName.adjustWidthToLabel();
     setTurtleName.twoArgBlock();
     setTurtleName.dockTypes[1] = 'anyin';
@@ -2307,7 +2307,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var loudnessBlock = new ProtoBlock('loudness');
     loudnessBlock.palette = palettes.dict['sensors'];
     blocks.protoBlockDict['loudness'] = loudnessBlock;
-    loudnessBlock.staticLabels.push(_('loudness'));
+    loudnessBlock.staticLabels.push(_('volumen'));
     loudnessBlock.adjustWidthToLabel();
     loudnessBlock.parameterBlock();
 
@@ -2323,42 +2323,42 @@ function initBasicProtoBlocks(palettes, blocks) {
     var getBlue = new ProtoBlock('getblue');
     getBlue.palette = palettes.dict['sensors'];
     blocks.protoBlockDict['getblue'] = getBlue;
-    getBlue.staticLabels.push(_('blue'));
+    getBlue.staticLabels.push(_('azur'));
     getBlue.adjustWidthToLabel();
     getBlue.parameterBlock();
 
     var getGreen = new ProtoBlock('getgreen');
     getGreen.palette = palettes.dict['sensors'];
     blocks.protoBlockDict['getgreen'] = getGreen;
-    getGreen.staticLabels.push(_('green'));
+    getGreen.staticLabels.push(_('verde'));
     getGreen.adjustWidthToLabel();
     getGreen.parameterBlock();
 
     var getRed = new ProtoBlock('getred');
     getRed.palette = palettes.dict['sensors'];
     blocks.protoBlockDict['getred'] = getRed;
-    getRed.staticLabels.push(_('red'));
+    getRed.staticLabels.push(_('rojo'));
     getRed.adjustWidthToLabel();
     getRed.parameterBlock();
 
     var getColorPixel = new ProtoBlock('getcolorpixel');
     getColorPixel.palette = palettes.dict['sensors'];
     blocks.protoBlockDict['getcolorpixel'] = getColorPixel;
-    getColorPixel.staticLabels.push(_('pixel color'));
+    getColorPixel.staticLabels.push(_('color del pixel'));
     getColorPixel.adjustWidthToLabel();
     getColorPixel.parameterBlock();
 
     var timeBlock = new ProtoBlock('time');
     timeBlock.palette = palettes.dict['sensors'];
     blocks.protoBlockDict['time'] = timeBlock;
-    timeBlock.staticLabels.push(_('time'));
+    timeBlock.staticLabels.push(_('tiempo'));
     timeBlock.adjustWidthToLabel();
     timeBlock.parameterBlock();
 
     var mousexBlock = new ProtoBlock('mousex');
     mousexBlock.palette = palettes.dict['sensors'];
     blocks.protoBlockDict['mousex'] = mousexBlock;
-    mousexBlock.staticLabels.push(_('mouse x'));
+    mousexBlock.staticLabels.push(_('cursor x'));
     mousexBlock.extraWidth = 15;
     mousexBlock.adjustWidthToLabel();
     mousexBlock.parameterBlock();
@@ -2366,7 +2366,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var mouseyBlock = new ProtoBlock('mousey');
     mouseyBlock.palette = palettes.dict['sensors'];
     blocks.protoBlockDict['mousey'] = mouseyBlock;
-    mouseyBlock.staticLabels.push(_('mouse y'));
+    mouseyBlock.staticLabels.push(_('cursor y'));
     mouseyBlock.extraWidth = 15;
     mouseyBlock.adjustWidthToLabel();
     mouseyBlock.parameterBlock();
@@ -2374,21 +2374,21 @@ function initBasicProtoBlocks(palettes, blocks) {
     var mousebuttonBlock = new ProtoBlock('mousebutton');
     mousebuttonBlock.palette = palettes.dict['sensors'];
     blocks.protoBlockDict['mousebutton'] = mousebuttonBlock;
-    mousebuttonBlock.staticLabels.push(_('mouse button'));
+    mousebuttonBlock.staticLabels.push(_('botón del ratón'));
     mousebuttonBlock.adjustWidthToLabel();
     mousebuttonBlock.booleanZeroArgBlock();
 
     var toASCIIBlock = new ProtoBlock('toascii');
     toASCIIBlock.palette = palettes.dict['sensors'];
     blocks.protoBlockDict['toascii'] = toASCIIBlock;
-    toASCIIBlock.staticLabels.push(_('to ASCII'));
+    toASCIIBlock.staticLabels.push(_('a ASCII'));
     toASCIIBlock.defaults.push(65);
     toASCIIBlock.oneArgMathBlock();
 
     var keyboardBlock = new ProtoBlock('keyboard');
     keyboardBlock.palette = palettes.dict['sensors'];
     blocks.protoBlockDict['keyboard'] = keyboardBlock;
-    keyboardBlock.staticLabels.push(_('keyboard'));
+    keyboardBlock.staticLabels.push(_('teclado'));
     keyboardBlock.adjustWidthToLabel();
     keyboardBlock.parameterBlock();
 
@@ -2397,7 +2397,7 @@ function initBasicProtoBlocks(palettes, blocks) {
     var evalBlock = new ProtoBlock('eval');
     evalBlock.palette = palettes.dict['number'];
     blocks.protoBlockDict['eval'] = evalBlock;
-    evalBlock.staticLabels.push(_('eval'));
+    evalBlock.staticLabels.push(_('evaluar'));
     evalBlock.staticLabels.push('f(x)');
     evalBlock.staticLabels.push('x');
     evalBlock.adjustWidthToLabel();

@@ -376,8 +376,8 @@ function Turtle (name, turtles, drum) {
         // Use the name on the label of the start block.
         if (this.startBlock != null) {
             this.startBlock.overrideName = this.name;
-            if (this.name === _('start drum')) {
-                this.startBlock.collapseText.text = _('drum');
+            if (this.name === _('iniciar tambor')) {
+                this.startBlock.collapseText.text = _('tambor');
             } else {
                 this.startBlock.collapseText.text = this.name;
             }
@@ -515,12 +515,12 @@ function Turtle (name, turtles, drum) {
         this.container.x = this.turtles.turtleX2screenX(this.x);
         this.container.y = this.turtles.turtleY2screenY(this.y);
         if (this.drum) {
-            if (this.name !== _('start drum')) {
-                this.rename(_('start drum'));
+            if (this.name !== _('iniciar tambor')) {
+                this.rename(_('iniciar tambor'));
             }
         } else {
-            if (this.name !== _('start')) {
-                this.rename(_('start'));
+            if (this.name !== _('iniciar')) {
+                this.rename(_('iniciar'));
             }
         }
 

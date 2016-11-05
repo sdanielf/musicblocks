@@ -231,7 +231,7 @@ function PitchSlider () {
         row.style.left = Math.floor(sliderDivPosition.left) + 'px';
         row.style.top = Math.floor(sliderDivPosition.top) + 'px';
 
-        var cell = this._addButton(row, -1, 'close-button.svg', iconSize, _('close'));
+        var cell = this._addButton(row, -1, 'close-button.svg', iconSize, _('cerrar'));
 
         cell.onclick = function() {
             docById('pitchSliderDiv').style.visibility = 'hidden';
@@ -350,7 +350,7 @@ function PitchSlider () {
             };
 
             var moveupcell = moveuprow.insertCell(i);
-            moveupcell.innerHTML = '&nbsp;&nbsp;<img src="header-icons/up.svg" title="' + _('move up') + '" alt="' + _('move up') + '" height="' + iconSize + '" width="' + iconSize + '" vertical-align="middle">&nbsp;&nbsp;';
+            moveupcell.innerHTML = '&nbsp;&nbsp;<img src="header-icons/up.svg" title="' + _('ascender') + '" alt="' + _('ascender') + '" height="' + iconSize + '" width="' + iconSize + '" vertical-align="middle">&nbsp;&nbsp;';
             moveupcell.style.width = Math.floor(SLIDERWIDTH * this._cellScale) + 'px';
             moveupcell.style.minWidth = moveupcell.style.width;
             moveupcell.style.maxWidth = moveupcell.style.width;
@@ -370,7 +370,7 @@ function PitchSlider () {
             };
 
             var movedowncell = movedownrow.insertCell(i);
-            movedowncell.innerHTML = '&nbsp;&nbsp;<img src="header-icons/down.svg" title="' + _('move down') + '" alt="' + _('move down') + '" height="' + iconSize + '" width="' + iconSize + '" vertical-align="middle">&nbsp;&nbsp;';
+            movedowncell.innerHTML = '&nbsp;&nbsp;<img src="header-icons/down.svg" title="' + _('descender') + '" alt="' + _('descender') + '" height="' + iconSize + '" width="' + iconSize + '" vertical-align="middle">&nbsp;&nbsp;';
             movedowncell.style.width = Math.floor(SLIDERWIDTH * this._cellScale) + 'px';
             movedowncell.style.minWidth = movedowncell.style.width;
             movedowncell.style.maxWidth = movedowncell.style.width;

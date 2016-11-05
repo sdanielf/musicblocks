@@ -152,23 +152,23 @@ function PitchDrumMatrix() {
         var iconSize = Math.floor(this._cellScale * 24);
         var that = this;
 
-        var cell = this._addButton(row, 1, 'play-button.svg', iconSize, _('play'));
+        var cell = this._addButton(row, 1, 'play-button.svg', iconSize, _('tocar'));
         cell.onclick=function() {
             that._logo.setTurtleDelay(0);
             that._playAll();
         }
 
-        var cell = this._addButton(row, 2, 'export-chunk.svg', iconSize, _('save'));
+        var cell = this._addButton(row, 2, 'export-chunk.svg', iconSize, _('guardar'));
         cell.onclick=function() {
             that._save();
         }
 
-        var cell = this._addButton(row, 3, 'erase-button.svg', iconSize, _('clear'));
+        var cell = this._addButton(row, 3, 'erase-button.svg', iconSize, _('limpiar'));
         cell.onclick=function() {
             that._clear();
         }
 
-        var cell = this._addButton(row, 4, 'close-button.svg', iconSize, _('close'));
+        var cell = this._addButton(row, 4, 'close-button.svg', iconSize, _('cerrar'));
         cell.onclick=function() {
             docById('pitchdrummatrix').style.visibility = 'hidden';
             docById('pitchdrummatrix').style.border = 0;
@@ -177,7 +177,7 @@ function PitchDrumMatrix() {
         var j = 0;
         var marginFromTop = Math.floor(matrixDivPosition.top + this._cellScale * 2 + parseInt(matrixDiv.style.paddingTop.replace('px', '')));
         for (var i = 0; i < this.solfegeNotes.length; i++) {
-            if (this.solfegeNotes[i].toLowerCase() === _('rest')) {
+            if (this.solfegeNotes[i].toLowerCase() === _('descanso')) {
                 // In case there are rest notes included.
                 this._rests += 1;
                 continue;
@@ -212,7 +212,7 @@ function PitchDrumMatrix() {
         row.style.top = Math.floor(MATRIXBUTTONHEIGHT * this._cellScale + i * MATRIXSOLFEHEIGHT * this._cellScale) + 'px';
         var cell = row.insertCell(0);
         cell.style.fontSize = this._cellScale * 75 + '%';
-        cell.innerHTML = ''; // '<b>' + _('drum') + '</b>';
+        cell.innerHTML = ''; // '<b>' + _('tambor') + '</b>';
         cell.style.position = 'fixed';
         cell.style.height = Math.floor(1.5 * MATRIXSOLFEHEIGHT * this._cellScale) + 'px';
         cell.style.width = Math.floor(MATRIXSOLFEWIDTH * this._cellScale) + 'px';

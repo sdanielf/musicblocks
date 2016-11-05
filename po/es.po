@@ -9,6 +9,22 @@
 "Language: es\n"
 "X-Generator: Poedit 1.7.4\n"
 
+#: js/turtledefs.js:41
+msgid "Welcome to Turtle Blocks"
+msgstr "Bienvenidos a TortuBloques"
+
+#: js/turtledefs.js:41
+msgid "Turtle Blocks is a Logo-inspired turtle that draws colorful pictures with snap-together visual-programming blocks."
+msgstr "Turtle Blocks es una tortuga basada en Logo que dibuja imÃ¡genes coloridas programable de una forma visual con bloques encastrables."
+
+#: js/turtledefs.js:42
+msgid "Palette buttons"
+msgstr "Botones de paleta"
+
+#: js/turtledefs.js:42
+msgid "This toolbar contains the palette buttons, click to show the palettes of blocks and drag blocks from the palettes onto the canvas to use them."
+msgstr "Esta barra de herramientas contiene los botones de la paleta de Tortuga, Lapcera, Medios, Sensores, Extras y más."
+
 #: js/activity.js:472
 #: js/activity.js:472
 #: js/activity.js:475
@@ -2708,7 +2724,7 @@ msgstr "z del acelerómetro"
 #: js/turtledefs.js:21
 
 #~msgid "actions"
-#~msgstr ""
+#~msgstr "accións"
 
 #~msgid "Expand/collapse toolbar"
 #~msgstr "Expandir o colapsar barra"
